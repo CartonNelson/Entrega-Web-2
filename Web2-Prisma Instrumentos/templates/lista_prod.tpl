@@ -7,7 +7,7 @@
               <td class="columna">Categoria</td>
               <td class="columna">Marca</td>
               <td class="columna">Modelo</td>
-              <td class="columna">Precio(USD)</td>
+              <td class="columna">Precio</td>
               <td class="columna">Stock</td>
               <td class="columna">Eliminar</td>
 

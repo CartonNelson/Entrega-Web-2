@@ -112,9 +112,11 @@ function agregarProducto(){
                       contentType: false,
                       cache: false,
                       processData: false,
+                      context:this,
                       success: function(data){
                         $("#llamada").html(data);
                         cargaHist()
+                        this.reset();
                       }
                     });
                   }

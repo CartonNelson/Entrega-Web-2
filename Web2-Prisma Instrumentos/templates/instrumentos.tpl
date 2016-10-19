@@ -19,22 +19,19 @@
                <tr>
                  <td class="columna">Marca</td>
                  <td class="columna">Modelo</td>
-                 <td class="columna">Precio(USD)</td>
-                 <td class="columna">Stock</td>
+                 <td class="columna">Precio</td>
                </tr>
              </thead>
              <tbody>
                {foreach from=$productos item=$prod}
-                    {if $prod['categoria']==$cat['categoria']}
+                  {if $prod['stock']==0}
+                      {if $prod['categoria']==$cat['categoria']}
                         <tr>
                          <td class="marca">{$prod.marca}</td>
                          <td class="modelo">{$prod.modelo}</td>
                          <td class="precio">{$prod.precio}</td>
-                         {if $prod['stock']==0}
-                         <td class="marca">si</td>
-                         {else}
-                         <td class="marca">no</td>
-                         {/if}
+                       </tr>
+                      {/if}
 
                     {/if}
                  {/foreach}

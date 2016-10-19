@@ -65,12 +65,12 @@
   </div>
 
     <h1>LISTADO</h1>
-    <h2>PROD</h2>
+    <h2>Productos</h2>
     <div class="">
       {include file='lista_prod.tpl'}
 
     </div>
-    <h2>CAT</h2>
+    <h2>Categorias</h2>
     <div class="">
       {include file='lista_cat.tpl'}
 
