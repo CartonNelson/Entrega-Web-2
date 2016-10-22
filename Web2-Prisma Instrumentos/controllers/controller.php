@@ -33,14 +33,15 @@ class controller
 
 ///////////////////////////////PRODUCTOS//////////////////////////////////////
   function agregarProducto(){
-    if ((!empty($_POST['categoria']))&&(!empty($_POST['marca']))&&(!empty($_POST['modelo']))&&(!empty($_POST['precio']))) {
-      $categoria= $_POST['categoria'];
-      $marca= $_POST['marca'];
-      $modelo= $_POST['modelo'];
-      $precio= $_POST['precio'];
-      $instrumento= array('categoria'=>$categoria,'marca'=>$marca ,'modelo'=>$modelo,'precio'=>$precio);
-      $this->model->agregarProducto($instrumento);
-
+    if((isset($_POST['categoria']))&&(isset($_POST['marca']))&&(isset($_POST['modelo']))&&(isset($_POST['precio']))){
+        if ((!empty($_POST['categoria']))&&(!empty($_POST['marca']))&&(!empty($_POST['modelo']))&&(!empty($_POST['precio']))) {
+          $categoria= $_POST['categoria'];
+          $marca= $_POST['marca'];
+          $modelo= $_POST['modelo'];
+          $precio= $_POST['precio'];
+          $instrumento= array('categoria'=>$categoria,'marca'=>$marca ,'modelo'=>$modelo,'precio'=>$precio);
+          $this->model->agregarProducto($instrumento);
+        }
 
     }
 
@@ -55,20 +56,21 @@ class controller
     }
 
     function eliminarProducto(){
-
+      if(isset($_REQUEST['id'])){
         if(!empty($_REQUEST['id'])){
           $id = array('id' => $_REQUEST['id']);
           $this->model->eliminarProducto($id);
 
         }
 
-
+      }
     }
 
     function editarProducto(){
-      $edit = $_REQUEST['id'];
-      $this->model->editarProducto($edit);
-
+        if (isset($_REQUEST['id'])){
+          $edit = $_REQUEST['id'];
+          $this->model->editarProducto($edit);
+        }
 
     }
 
@@ -88,21 +90,21 @@ class controller
       }
 
     function agregaCat(){
+        if ((isset($_POST['categoriaNueva']))&&(isset($_FILES['img']))){
+          if ((!empty($_POST['categoriaNueva']))&&(!empty($_FILES['img']))){
 
-      if ((!empty($_POST['categoriaNueva']))&&(!empty($_FILES['img']))){
+            $categoria= $_POST['categoriaNueva'];
+            $imagenesVerificadas = $this->getImagenesVerificadas($_FILES['img']);
 
-        $categoria= $_POST['categoriaNueva'];
-        $imagenesVerificadas = $this->getImagenesVerificadas($_FILES['img']);
-
-            if(count($imagenesVerificadas)>0){
-              $cat= array('categoria'=>$categoria);
-              $this->model->agregaCat($cat,$imagenesVerificadas);
-              }
-              
-
-      }
+                if(count($imagenesVerificadas)>0){
+                  $cat= array('categoria'=>$categoria);
+                  $this->model->agregaCat($cat,$imagenesVerificadas);
+                  }
 
 
+          }
+
+        }
     }
     function mostrarCategorias(){
       $categorias= $this->model->getCategorias();
@@ -112,31 +114,35 @@ class controller
     }
 
     function eliminarCategoria(){
+      if (isset($_REQUEST['id'])){
         if(!empty($_REQUEST['id'])){
           $id = array('id' => $_REQUEST['id']);
           $this->model->eliminarCategoria($id);
 
         }
-
+      }
     }
 
     function editarCategoria(){
+      if ((isset($_REQUEST['categoriaEdit']))&&(isset($_REQUEST['id']))){
         if((!empty($_REQUEST['categoriaEdit']))&&(!empty($_REQUEST['id']))){
           $edit = array('id' => $_REQUEST['id'],'categoria' => $_REQUEST['categoriaEdit']);
           $this->model->editarCategoria($edit);
 
         }
+      }
     }
 
     /////////////////////////////////CONTACTO////////////////////////////////
       function enviarContacto(){
-      if((!empty($_POST['nombre']))&&(!empty($_POST['email']))&&(!empty($_POST['mensaje']))){
-        $consulta = array('nombre' =>$_POST['nombre'] ,'email' =>$_POST['email'],'mensaje' =>$_POST['mensaje']);
-        $this->contactoModel->enviarContacto($consulta);
+        if((isset($_POST['nombre']))&&(isset($_POST['email']))&&(isset($_POST['mensaje']))){
+          if((!empty($_POST['nombre']))&&(!empty($_POST['email']))&&(!empty($_POST['mensaje']))){
+            $consulta = array('nombre' =>$_POST['nombre'] ,'email' =>$_POST['email'],'mensaje' =>$_POST['mensaje']);
+            $this->contactoModel->enviarContacto($consulta);
 
+            }
         }
-
-}
+      }
 
 }
 

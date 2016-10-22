@@ -39,13 +39,20 @@
          </table>
        </section>
    </div>
-    <aside>
-      <div class="col-md-6" class="col-xs-12">
-        {foreach $cat['imagenes'] item=imagen}
-        <img src="{$imagen['path']}"    class="img-thumbnail">
-        {/foreach}
-      </div>
-    </aside>
+   <aside class="publi">
+      <div class="col-md-6" class="col-xs-4" >
+          <h2>Galeria de imagenes</h2>
+              {foreach $cat['imagenes'] item=imagen}
+                <div class=>
+                 <a href="{$imagen['path']}" class="thumbnail">
+                   <img src="{$imagen['path']}" alt="" style="">
+                 </a>
+               </div>
+
+              {/foreach}
+
+        </div>
+      </aside>
 </article>
 </div>
 {/foreach}
