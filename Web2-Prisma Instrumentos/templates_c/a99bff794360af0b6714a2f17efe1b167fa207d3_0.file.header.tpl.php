@@ -1,11 +1,19 @@
 <?php
+<<<<<<< HEAD
 /* Smarty version 3.1.30, created on 2016-10-24 03:34:18
+=======
+/* Smarty version 3.1.30, created on 2016-10-24 01:48:21
+>>>>>>> divicionMVC
   from "C:\xampp\htdocs\prisma\Web2-Prisma Instrumentos\templates\header.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
+<<<<<<< HEAD
   'unifunc' => 'content_580d651aa9e494_12298182',
+=======
+  'unifunc' => 'content_580d4c45b91d13_16725261',
+>>>>>>> divicionMVC
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +28,11 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
+<<<<<<< HEAD
 function content_580d651aa9e494_12298182 (Smarty_Internal_Template $_smarty_tpl) {
+=======
+function content_580d4c45b91d13_16725261 (Smarty_Internal_Template $_smarty_tpl) {
+>>>>>>> divicionMVC
 ?>
 <!DOCTYPE html>
 <html>

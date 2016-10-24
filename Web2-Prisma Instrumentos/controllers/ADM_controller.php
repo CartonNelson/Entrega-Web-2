@@ -1,23 +1,21 @@
 <?php
-require ("views/inst_view.php");
-require ("models/instrumentos_model.php");
-require ("models/contactoModel.php");
+require_once ("views/inst_view.php");
+require_once ("views/ADM_view.php");
+require_once ("models/instrumentos_model.php");
+require_once ("models/contactoModel.php");
 
-class controller
+class ADM_controller
 {
   private $vista;
   private $model;
   private $contactoModel;
   function __construct()
   {
-    $this->vista= new inst_view();
+    $this->vista= new ADM_view();
     $this->model= new instrumentos_model();
     $this->contactoModel= new contactoModel();
   }
-  function iniciar(){
-      $this->vista->iniciar();
 
-  }
   function iniciar_ADM(){
     $productos= $this->model->getProductos();
     $categorias= $this->model->getCategorias();

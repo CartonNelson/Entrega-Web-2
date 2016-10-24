@@ -1,11 +1,19 @@
 <?php
+<<<<<<< HEAD
 /* Smarty version 3.1.30, created on 2016-10-24 03:34:18
+=======
+/* Smarty version 3.1.30, created on 2016-10-24 01:48:21
+>>>>>>> divicionMVC
   from "C:\xampp\htdocs\prisma\Web2-Prisma Instrumentos\templates\contacto.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
+<<<<<<< HEAD
   'unifunc' => 'content_580d651aac7194_14471714',
+=======
+  'unifunc' => 'content_580d4c45c0b848_21931119',
+>>>>>>> divicionMVC
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +28,11 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
+<<<<<<< HEAD
 function content_580d651aac7194_14471714 (Smarty_Internal_Template $_smarty_tpl) {
+=======
+function content_580d4c45c0b848_21931119 (Smarty_Internal_Template $_smarty_tpl) {
+>>>>>>> divicionMVC
 ?>
 <div class="row">
   <div id="contact">
