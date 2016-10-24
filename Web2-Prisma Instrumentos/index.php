@@ -1,53 +1,59 @@
 <?php
-require('controllers/controller.php');
-require('config/configApp.php');
+ require_once('controllers/ADM_controller.php');
+ require_once('controllers/user_controller.php');
+ require_once('config/configApp.php');
 
-$controller =new controller();
+$ADM_controller =new ADM_controller();
+$user_controller =new user_controller();
 
 if (!array_key_exists(ConfigApp::$ACTION,$_REQUEST)){
-  $controller->iniciar();
+  $user_controller->iniciar();
   die();
 }
 
 switch ($_REQUEST[ConfigApp::$ACTION]) {
   case ConfigApp::$ACTION_INICIAR_ADM:
-    $controller->iniciar_ADM();
+    $ADM_controller->iniciar_ADM();
+
 
       break;
   case ConfigApp::$ACTION_AGREGAR_PRODUCTO:
-    $controller->agregarProducto();
+    $ADM_controller->agregarProducto();
     break;
   case ConfigApp::$ACTION_MOSTRAR_PRODUCTOS:
-    $controller->mostrarProductos();
+
+    $ADM_controller->mostrarProductos();
 
       break;
       case ConfigApp::$ACTION_ELIMINAR_PRODDUCTO:
-        $controller->eliminarProducto();
+        $ADM_controller->eliminarProducto();
           break;
           case ConfigApp::$ACTION_AGREGAR_CATEGORIA:
-            $controller->agregaCat();
+            $ADM_controller->agregaCat();
             break;
             case ConfigApp::$ACTION_ELIMINAR_CATEGORIA:
-              $controller->eliminarCategoria();
+              $ADM_controller->eliminarCategoria();
                 break;
                 case ConfigApp::$ACTION_MOSTRAR_CATEGORIAS:
-                $controller->mostrarCategorias();
+
+                $ADM_controller->mostrarCategorias();
 
                     break;
                     case ConfigApp::$ACTION_EDITAR_CATEGORIA:
-                    $controller->editarCategoria();
+                    $ADM_controller->editarCategoria();
 
                         break;
                         case ConfigApp::$ACTION_EDITAR_PRODUCTO:
-                        $controller->editarProducto();
+                        $ADM_controller->editarProducto();
 
                             break;
                             case ConfigApp::$ACTION_MOSTRAR_INST:
-                              $controller->mostrarInst();
+
+                              $ADM_controller->mostrarInst();
 
                                 break;
                                 case ConfigApp::$ACTION_ENVIAR_CONTACTO:
-                              $controller->enviarContacto();
+                              $ADM_controller->enviarContacto();
                               break;
 
 
