@@ -36,6 +36,7 @@
     <container>
       <h3>Agregar Categoria</h3>
       <form class="form-inline" id="formNewCat" method="POST" enctype="multipart/form-data">
+
         <input type="text" class="form-control" name="categoriaNueva" value="" placeholder="nueva categoria">
 
 
@@ -51,8 +52,12 @@
       <h3>editar categoria</h3>
         <form class="form-inline" id="formEditarCategoria"  method="POST">
 
+          <select class="form-control" name="id" title="categoria">
+              {foreach $categorias item=$cat}
+              <option value="{$cat.id_categoria}">{$cat.categoria}</option>
+              {/foreach}
+          </select>
 
-            <input type="text" class="form-control" name="id" value="" placeholder="Nro De Categoria">
 
             <input type="text" class="form-control" name="categoriaEdit" value="" placeholder="Nuevo nombre">
             <input type="submit" class=" btn btn-success" name="Editar" value="Editar">
