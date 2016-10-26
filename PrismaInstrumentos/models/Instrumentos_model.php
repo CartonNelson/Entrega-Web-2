@@ -40,7 +40,7 @@ class instrumentos_model
 
   }
 
-  function editarProducto($info){
+  function editarStock($info){
     $prod=$this->getProducto($info);
     $sentencia = $this->db->prepare("update productos set stock=? where id_producto=?");
     $sentencia->execute(array(!($prod['stock']),$info));

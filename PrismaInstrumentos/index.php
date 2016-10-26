@@ -43,8 +43,8 @@ switch ($_REQUEST[ConfigApp::$ACTION]) {
                     $ADM_controller->editarCategoria();
 
                         break;
-                        case ConfigApp::$ACTION_EDITAR_PRODUCTO:
-                        $ADM_controller->editarProducto();
+                        case ConfigApp::$ACTION_EDITAR_STOCK:
+                        $ADM_controller->editarStock();
 
                             break;
                             case ConfigApp::$ACTION_MOSTRAR_INST:

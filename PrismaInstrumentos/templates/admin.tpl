@@ -80,4 +80,32 @@
       {include file='lista_cat.tpl'}
 
     </div>
+    <div class="row">
+      <container>
+        <h3>Editar Producto</h3>
+          <form class="form-inline" id="formEditarProducto"  method="POST">
+
+            <select class="form-control" name="id_prod" title="categoria">
+                {foreach $productos item=$prod}
+                <option value="{$prod.id_producto}">{$prod.modelo}</option>
+                {/foreach}
+            </select>
+
+
+              <input type="text" class="form-control" name="marcaEdit" value="" placeholder="Editar marca">
+              <input type="text" class="form-control" name="modeloEdit" value="" placeholder="Editar modelo">
+              <input type="text" class="form-control" name="precioEdit" value="" placeholder="Editar precio">
+              <select class="form-control" name="id_cat" title="categoria">
+                  {foreach $categorias item=$cat}
+                  <option value="{$cat.categoria}">{$cat.categoria}</option>
+                  {/foreach}
+              </select>
+
+              <input type="submit" class=" btn btn-success" name="Editar" value="Editar">
+
+          </form>
+
+
+
+      </container>
   </body>

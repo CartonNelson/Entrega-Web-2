@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2016-10-25 04:37:42
+/* Smarty version 3.1.30, created on 2016-10-26 20:43:28
   from "C:\xampp\htdocs\prisma\PrismaInstrumentos\templates\admin.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_580ec576b35a12_68201924',
+  'unifunc' => 'content_5810f9502df7a8_67661308',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '6fb535b8a5d9f1c7af7a64902c4634db7b3dcaa8' => 
     array (
       0 => 'C:\\xampp\\htdocs\\prisma\\PrismaInstrumentos\\templates\\admin.tpl',
-      1 => 1477362632,
+      1 => 1477507012,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:lista_cat.tpl' => 1,
   ),
 ),false)) {
-function content_580ec576b35a12_68201924 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5810f9502df7a8_67661308 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 
@@ -132,6 +132,56 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
 
 
     </div>
+    <div class="row">
+      <container>
+        <h3>Editar Producto</h3>
+          <form class="form-inline" id="formEditarProducto"  method="POST">
+
+            <select class="form-control" name="id_prod" title="categoria">
+                <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['productos']->value, 'prod');
+if ($_from !== null) {
+foreach ($_from as $_smarty_tpl->tpl_vars['prod']->value) {
+?>
+                <option value="<?php echo $_smarty_tpl->tpl_vars['prod']->value['id_producto'];?>
+"><?php echo $_smarty_tpl->tpl_vars['prod']->value['modelo'];?>
+</option>
+                <?php
+}
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
+?>
+
+            </select>
+
+
+              <input type="text" class="form-control" name="marcaEdit" value="" placeholder="Editar marca">
+              <input type="text" class="form-control" name="modeloEdit" value="" placeholder="Editar modelo">
+              <input type="text" class="form-control" name="precioEdit" value="" placeholder="Editar precio">
+              <select class="form-control" name="id_cat" title="categoria">
+                  <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['categorias']->value, 'cat');
+if ($_from !== null) {
+foreach ($_from as $_smarty_tpl->tpl_vars['cat']->value) {
+?>
+                  <option value="<?php echo $_smarty_tpl->tpl_vars['cat']->value['categoria'];?>
+"><?php echo $_smarty_tpl->tpl_vars['cat']->value['categoria'];?>
+</option>
+                  <?php
+}
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
+?>
+
+              </select>
+
+              <input type="submit" class=" btn btn-success" name="Editar" value="Editar">
+
+          </form>
+
+
+
+      </container>
   </body>
 <?php }
 }

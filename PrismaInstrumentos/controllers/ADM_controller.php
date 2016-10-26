@@ -64,14 +64,14 @@ class ADM_controller
       }
     }
 
-    function editarProducto(){
+    function editarStock(){
         if (isset($_REQUEST['id'])){
           $edit = $_REQUEST['id'];
-          $this->model->editarProducto($edit);
+          $this->model->editarStock($edit);
         }
 
     }
-
+  //  function editarProducto
 ////////////////////////CATEGORIAS//////////////////////////////////////
       function getImagenesVerificadas($imagenes){
       $imagenesVerificadas = [];

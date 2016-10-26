@@ -35,10 +35,10 @@ function eliminarCategoria(){
 
 }
 
-function editarProducto(){
+function editarStock(){
   event.preventDefault();
 
-  $.get("index.php?action=editarProducto&id="+ $(this).attr("data-stock"), function(data) {
+  $.get("index.php?action=editarStock&id="+ $(this).attr("data-stock"), function(data) {
   $('#llamada').html(data);
 
   cargaAdmin();
@@ -129,7 +129,7 @@ function cargaAdmin(){
      $('#llamada').html(data);
      $(".eliminarProducto").click(eliminarProducto);
      $(".eliminarCategoria").click(eliminarCategoria);
-     $(".editarProducto").click(editarProducto);
+     $(".editarStock").click(editarStock);
      $("#formProducto").submit(agregarProducto);
      $("#formEditarCategoria").submit(editarCategoria);
      $("#formNewCat").submit(agregarCategoria);

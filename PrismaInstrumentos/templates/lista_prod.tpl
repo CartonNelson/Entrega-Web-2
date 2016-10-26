@@ -22,9 +22,9 @@
                       <td class="modelo">{$prod.modelo}</td>
                       <td class="precio">{$prod.precio}</td>
                       {if $prod['stock']==0}
-                      <td class="marca"><a class="editarProducto" data-stock="{$prod['id_producto']}"href="#">si</td>
+                      <td class="marca"><a class="editarStock" data-stock="{$prod['id_producto']}"href="#">si</td>
                       {else}
-                      <td class="marca"><a class="editarProducto" data-stock="{$prod['id_producto']}"href="#">no</td>
+                      <td class="marca"><a class="editarStock" data-stock="{$prod['id_producto']}"href="#">no</td>
 
                       {/if}
                       <td  class="precio"><a class="eliminarProducto" href="#" data-idProd="{$prod['id_producto']}">eliminar</td>

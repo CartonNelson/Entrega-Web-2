@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2016-10-25 04:37:42
+/* Smarty version 3.1.30, created on 2016-10-26 20:43:28
   from "C:\xampp\htdocs\prisma\PrismaInstrumentos\templates\lista_prod.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_580ec576c4f4a2_79655334',
+  'unifunc' => 'content_5810f950302a35_25843755',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'dfe9ee0e2530af9205a7ffc11b3d44de0fbef372' => 
     array (
       0 => 'C:\\xampp\\htdocs\\prisma\\PrismaInstrumentos\\templates\\lista_prod.tpl',
-      1 => 1477107269,
+      1 => 1477507287,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_580ec576c4f4a2_79655334 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5810f950302a35_25843755 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 
     <table>
@@ -55,10 +55,10 @@ foreach ($_from as $_smarty_tpl->tpl_vars['prod']->value) {
                       <td class="precio"><?php echo $_smarty_tpl->tpl_vars['prod']->value['precio'];?>
 </td>
                       <?php if ($_smarty_tpl->tpl_vars['prod']->value['stock'] == 0) {?>
-                      <td class="marca"><a class="editarProducto" data-stock="<?php echo $_smarty_tpl->tpl_vars['prod']->value['id_producto'];?>
+                      <td class="marca"><a class="editarStock" data-stock="<?php echo $_smarty_tpl->tpl_vars['prod']->value['id_producto'];?>
 "href="#">si</td>
                       <?php } else { ?>
-                      <td class="marca"><a class="editarProducto" data-stock="<?php echo $_smarty_tpl->tpl_vars['prod']->value['id_producto'];?>
+                      <td class="marca"><a class="editarStock" data-stock="<?php echo $_smarty_tpl->tpl_vars['prod']->value['id_producto'];?>
 "href="#">no</td>
 
                       <?php }?>
