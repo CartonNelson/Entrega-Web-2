@@ -95,7 +95,7 @@
               <input type="text" class="form-control" name="marcaEdit" value="" placeholder="Editar marca">
               <input type="text" class="form-control" name="modeloEdit" value="" placeholder="Editar modelo">
               <input type="text" class="form-control" name="precioEdit" value="" placeholder="Editar precio">
-              <select class="form-control" name="id_cat" title="categoria">
+              <select class="form-control" name="nameCategoria" title="categoria">
                   {foreach $categorias item=$cat}
                   <option value="{$cat.categoria}">{$cat.categoria}</option>
                   {/foreach}

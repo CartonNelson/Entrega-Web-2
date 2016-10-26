@@ -101,6 +101,23 @@ function agregarProducto(){
                   });
                 }
 //////////////////////////////////////////////////
+            function editarProducto(){
+                    event.preventDefault();
+                    formData = new FormData(this);
+                    $.ajax({
+                      method: "POST",
+                      url: "index.php?action=editarProducto",
+                      data: formData,
+                      contentType: false,
+                      cache: false,
+                      processData: false,
+                      success: function(data){
+                        $("#llamada").html(data);
+                        cargaAdmin();
+        }
+      });
+    }
+//////////////////////////////////////////////////
                 function enviaConsulta(){
                     event.preventDefault();
                     formData = new FormData(this);
@@ -133,7 +150,7 @@ function cargaAdmin(){
      $("#formProducto").submit(agregarProducto);
      $("#formEditarCategoria").submit(editarCategoria);
      $("#formNewCat").submit(agregarCategoria);
-
+     $("#formEditarProducto").submit(editarProducto);
    });
   render(cargas);
 }

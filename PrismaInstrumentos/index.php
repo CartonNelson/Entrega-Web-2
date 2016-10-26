@@ -56,6 +56,10 @@ switch ($_REQUEST[ConfigApp::$ACTION]) {
                               $ADM_controller->enviarContacto();
                               break;
 
+                                    case ConfigApp::$ACTION_EDITAR_PRODUCTO:
+                                      $ADM_controller->editarProducto();
+                                        break;
+
 
 }
  ?>

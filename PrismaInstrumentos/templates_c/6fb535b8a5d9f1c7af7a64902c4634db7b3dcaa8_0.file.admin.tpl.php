@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2016-10-26 20:43:28
+/* Smarty version 3.1.30, created on 2016-10-26 21:04:29
   from "C:\xampp\htdocs\prisma\PrismaInstrumentos\templates\admin.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5810f9502df7a8_67661308',
+  'unifunc' => 'content_5810fe3d03eed7_42364090',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '6fb535b8a5d9f1c7af7a64902c4634db7b3dcaa8' => 
     array (
       0 => 'C:\\xampp\\htdocs\\prisma\\PrismaInstrumentos\\templates\\admin.tpl',
-      1 => 1477507012,
+      1 => 1477508550,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:lista_cat.tpl' => 1,
   ),
 ),false)) {
-function content_5810f9502df7a8_67661308 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5810fe3d03eed7_42364090 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 
@@ -158,7 +158,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
               <input type="text" class="form-control" name="marcaEdit" value="" placeholder="Editar marca">
               <input type="text" class="form-control" name="modeloEdit" value="" placeholder="Editar modelo">
               <input type="text" class="form-control" name="precioEdit" value="" placeholder="Editar precio">
-              <select class="form-control" name="id_cat" title="categoria">
+              <select class="form-control" name="nameCategoria" title="categoria">
                   <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['categorias']->value, 'cat');
 if ($_from !== null) {

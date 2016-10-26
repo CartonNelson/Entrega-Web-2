@@ -13,6 +13,6 @@ public static $ACTION_EDITAR_CATEGORIA= 'editarCategoria';
 public static $ACTION_MOSTRAR_INST= 'mostrarInst';
 public static $ACTION_INICIAR_ADM= 'iniciar_ADM';
 public static $ACTION_ENVIAR_CONTACTO= 'enviarContacto';
-
+public static $ACTION_EDITAR_PRODUCTO= 'editarProducto';
 
 } ?>

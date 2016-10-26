@@ -45,7 +45,24 @@ class instrumentos_model
     $sentencia = $this->db->prepare("update productos set stock=? where id_producto=?");
     $sentencia->execute(array(!($prod['stock']),$info));
   }
-
+  function editarProducto($marca,$modelo,$precio,$categoria,$id_producto){
+    if (!empty($marca)) {
+     $sentencia = $this->db->prepare("update productos set marca=? where id_producto=?");
+     $sentencia->execute(array($marca, $id_producto));
+   }
+   if (!empty($modelo)) {
+    $sentencia = $this->db->prepare("update productos set modelo=? where id_producto=?");
+    $sentencia->execute(array($modelo, $id_producto));
+  }
+  if (!empty($precio)) {
+   $sentencia = $this->db->prepare("update productos set precio=? where id_producto=?");
+   $sentencia->execute(array($precio, $id_producto));
+ }
+ if (!empty($categoria)) {
+  $sentencia = $this->db->prepare("update productos set categoria=? where id_producto=?");
+  $sentencia->execute(array($categoria, $id_producto));
+}
+  }
 ////////////////////////CATEGORIAS//////////////////////////////////////
   function agregaCat($categoria,$imagenes){
     $sentencia = $this->db->prepare("INSERT INTO categorias(categoria)"."VALUES(:categoria)");

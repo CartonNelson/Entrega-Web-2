@@ -71,7 +71,19 @@ class ADM_controller
         }
 
     }
-  //  function editarProducto
+   function editarProducto(){
+     if ((isset($_POST['marcaEdit']))&&(isset($_POST['modeloEdit']))&&(isset($_POST['precioEdit']))&&(isset($_POST['nameCategoria']))&&(isset($_POST['id_prod']))){
+        $marca = $_POST['marcaEdit'];
+        $modelo = $_POST['modeloEdit'];
+        $precio = $_POST['precioEdit'];
+        $categoria = $_POST['nameCategoria'];
+        $id_producto= $_POST['id_prod'];
+
+        $this->model->editarProducto($marca,$modelo,$precio,$categoria,$id_producto);
+
+
+     }
+   }
 ////////////////////////CATEGORIAS//////////////////////////////////////
       function getImagenesVerificadas($imagenes){
       $imagenesVerificadas = [];
