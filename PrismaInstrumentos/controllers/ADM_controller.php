@@ -3,28 +3,31 @@ require_once ("views/inst_view.php");
 require_once ("views/ADM_view.php");
 require_once ("models/instrumentos_model.php");
 require_once ("models/contactoModel.php");
+require_once ("models/categoria_model.php");
 
 class ADM_controller
 {
   private $vista;
-  private $model;
+  private $prodModel;
   private $contactoModel;
+  private $catModel;
   function __construct()
   {
     $this->vista= new ADM_view();
-    $this->model= new instrumentos_model();
+    $this->prodModel= new instrumentos_model();
+    $this->catModel= new categoria_model();
     $this->contactoModel= new contactoModel();
   }
 
   function iniciar_ADM(){
-    $productos= $this->model->getProductos();
-    $categorias= $this->model->getCategorias();
+    $productos= $this->prodModel->getProductos();
+    $categorias= $this->catModel->getCategorias();
     $this->vista->iniciar_ADM($productos,$categorias);
 
   }
     function mostrarInst(){
-      $productos= $this->model->getProductos();
-      $categorias= $this->model->getCategorias();
+      $productos= $this->prodModel->getProductos();
+      $categorias= $this->catModel->getCategorias();
       $this->vista->mostrarInst($productos,$categorias);
     }
 
@@ -38,7 +41,7 @@ class ADM_controller
           $modelo= $_POST['modelo'];
           $precio= $_POST['precio'];
           $instrumento= array('categoria'=>$categoria,'marca'=>$marca ,'modelo'=>$modelo,'precio'=>$precio);
-          $this->model->agregarProducto($instrumento);
+          $this->prodModel->agregarProducto($instrumento);
         }
 
     }
@@ -47,7 +50,7 @@ class ADM_controller
   }
 
     function mostrarProductos(){
-      $productos= $this->model->getProductos();
+      $productos= $this->prodModel->getProductos();
 
       $this->vista->mostrarProductos($productos);
 
@@ -57,7 +60,7 @@ class ADM_controller
       if(isset($_REQUEST['id'])){
         if(!empty($_REQUEST['id'])){
           $id = array('id' => $_REQUEST['id']);
-          $this->model->eliminarProducto($id);
+          $this->prodModel->eliminarProducto($id);
 
         }
 
@@ -67,7 +70,7 @@ class ADM_controller
     function editarStock(){
         if (isset($_REQUEST['id'])){
           $edit = $_REQUEST['id'];
-          $this->model->editarStock($edit);
+          $this->prodModel->editarStock($edit);
         }
 
     }
@@ -79,7 +82,7 @@ class ADM_controller
         $categoria = $_POST['nameCategoria'];
         $id_producto= $_POST['id_prod'];
 
-        $this->model->editarProducto($marca,$modelo,$precio,$categoria,$id_producto);
+        $this->prodModel->editarProducto($marca,$modelo,$precio,$categoria,$id_producto);
 
 
      }
@@ -108,7 +111,7 @@ class ADM_controller
 
                 if(count($imagenesVerificadas)>0){
                   $cat= array('categoria'=>$categoria);
-                  $this->model->agregaCat($cat,$imagenesVerificadas);
+                  $this->catModel->agregaCat($cat,$imagenesVerificadas);
                   }
 
 
@@ -117,7 +120,7 @@ class ADM_controller
         }
     }
     function mostrarCategorias(){
-      $categorias= $this->model->getCategorias();
+      $categorias= $this->catModel->getCategorias();
       $this->vista-> mostrarCat($categorias);
 
 
@@ -127,7 +130,7 @@ class ADM_controller
       if (isset($_REQUEST['id'])){
         if(!empty($_REQUEST['id'])){
           $id = array('id' => $_REQUEST['id']);
-          $this->model->eliminarCategoria($id);
+          $this->catModel->eliminarCategoria($id);
 
         }
       }
@@ -137,7 +140,7 @@ class ADM_controller
       if ((isset($_REQUEST['categoriaEdit']))&&(isset($_REQUEST['id']))){
         if((!empty($_REQUEST['categoriaEdit']))&&(!empty($_REQUEST['id']))){
           $edit = array('id' => $_REQUEST['id'],'categoria' => $_REQUEST['categoriaEdit']);
-          $this->model->editarCategoria($edit);
+          $this->catModel->editarCategoria($edit);
 
         }
       }

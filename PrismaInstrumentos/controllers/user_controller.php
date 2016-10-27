@@ -2,19 +2,22 @@
 require_once ("views/inst_view.php");
 require_once ("views/ADM_view.php");
 require_once ("models/instrumentos_model.php");
+require_once ("models/categoria_model.php");
 require_once ("models/contactoModel.php");
 
 
 
 class user_controller{
   private $vista;
-  private $model;
+  private $prodModel;
   private $contactoModel;
+  private $catModel;
 
   function __construct()
   {
     $this->vista= new inst_view();
-    $this->model= new instrumentos_model();
+    $this->prodModel= new instrumentos_model();
+    $this->catModel= new categoria_model();
     $this->contactoModel= new contactoModel();
   }
 
@@ -23,18 +26,18 @@ class user_controller{
 
   }
   function mostrarInst(){
-    $productos= $this->model->getProductos();
-    $categorias= $this->model->getCategorias();
+    $productos= $this->prodModel->getProductos();
+    $categorias= $this->catModel->getCategorias();
     $this->vista->mostrarInst($productos,$categorias);
   }
   function mostrarProductos(){
-    $productos= $this->model->getProductos();
+    $productos= $this->prodModel->getProductos();
 
     $this->vista->mostrarProductos($productos);
 
   }
   function mostrarCategorias(){
-    $categorias= $this->model->getCategorias();
+    $categorias= $this->catModel->getCategorias();
     $this->vista-> mostrarCat($categorias);
 
 
