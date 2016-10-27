@@ -54,19 +54,4 @@ class user_controller{
 
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
  ?>

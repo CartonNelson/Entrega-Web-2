@@ -12,7 +12,7 @@ class instrumentos_model
   }
 
 
-////////////////////////PRODUCTOS//////////////////////////////////////
+
   function agregarProducto($instrumento){
 
      $sentencia = $this->db->prepare("INSERT INTO productos(categoria,marca,modelo,precio)"."VALUES(:categoria, :marca, :modelo, :precio)");
@@ -63,7 +63,6 @@ class instrumentos_model
   $sentencia->execute(array($categoria, $id_producto));
 }
   }
-////////////////////////CATEGORIAS//////////////////////////////////////
 
 }
 
