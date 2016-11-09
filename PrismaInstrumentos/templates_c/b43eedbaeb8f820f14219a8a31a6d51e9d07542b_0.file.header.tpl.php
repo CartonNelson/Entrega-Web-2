@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2016-10-25 04:37:37
+/* Smarty version 3.1.30, created on 2016-11-09 04:01:24
   from "C:\xampp\htdocs\prisma\PrismaInstrumentos\templates\header.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_580ec57147ea70_40193984',
+  'unifunc' => 'content_58229184815019_02003196',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'b43eedbaeb8f820f14219a8a31a6d51e9d07542b' => 
     array (
       0 => 'C:\\xampp\\htdocs\\prisma\\PrismaInstrumentos\\templates\\header.tpl',
-      1 => 1477107269,
+      1 => 1478660480,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_580ec57147ea70_40193984 (Smarty_Internal_Template $_smarty_tpl) {
+function content_58229184815019_02003196 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html>
@@ -62,6 +62,7 @@ function content_580ec57147ea70_40193984 (Smarty_Internal_Template $_smarty_tpl)
     <![endif]-->
   </head>
   <body>
+    
     <div class="portada">
       <img class="portada"src="images\portada.jpg" alt="portada" />
     </div>

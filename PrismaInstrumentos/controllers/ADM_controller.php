@@ -51,7 +51,6 @@ class ADM_controller
 
     function mostrarProductos(){
       $productos= $this->prodModel->getProductos();
-
       $this->vista->mostrarProductos($productos);
 
     }
