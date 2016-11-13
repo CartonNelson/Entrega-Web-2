@@ -1,10 +1,12 @@
 <?php
  require_once('controllers/ADM_controller.php');
  require_once('controllers/user_controller.php');
+ require_once('controllers/login_controller.php');
  require_once('config/configApp.php');
 
 $ADM_controller =new ADM_controller();
 $user_controller =new user_controller();
+$login_controller=new login_controller();
 
 if (!array_key_exists(ConfigApp::$ACTION,$_REQUEST)){
   $user_controller->iniciar();
@@ -60,6 +62,15 @@ switch ($_REQUEST[ConfigApp::$ACTION]) {
                                       $ADM_controller->editarProducto();
                                         break;
 
+                                        case ConfigApp::$ACTION_LOGIN:
+                                          $login_controller->login();
+                                            break;
+                                            case ConfigApp::$ACTION_REGISTRARSE:
+                                              $login_controller->registrarse();
+                                                break;
+                                                case ConfigApp::$ACTION_LOGOUT:
+                                                  $login_controller->logout();
+                                                    break;
 
 }
  ?>

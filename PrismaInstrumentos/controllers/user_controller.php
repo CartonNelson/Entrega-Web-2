@@ -22,6 +22,7 @@ class user_controller{
   }
 
   function iniciar(){
+
       $this->vista->iniciar();
 
   }

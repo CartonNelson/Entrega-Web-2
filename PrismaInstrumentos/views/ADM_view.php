@@ -11,11 +11,18 @@ class ADM_view{
     $this->smarty= new Smarty();
     }
 
-    function iniciar_ADM($prod,$cat){
+    function iniciar_ADM($prod,$cat,$users){
 
       $this->smarty->assign('productos',$prod);
       $this->smarty->assign('categorias',$cat);
+      $this->smarty->assign('usuarios',$users);
+
       $this->smarty->display("admin.tpl");
+    }
+
+    function mostrarUsuarios($usuarios){
+      $this->smarty->assign('user',$usuarios);
+      $this->smarty->display('lista_prod.tpl');
     }
 
     function mostrarProductos($productos){

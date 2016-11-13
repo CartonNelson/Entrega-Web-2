@@ -106,5 +106,8 @@
       {include file='lista_cat.tpl'}
 
     </div>
-
+    <h1>USUARIOS</h1>
+    <div class="">
+      {include file='usuarios.tpl'}
+    </div>
   </body>

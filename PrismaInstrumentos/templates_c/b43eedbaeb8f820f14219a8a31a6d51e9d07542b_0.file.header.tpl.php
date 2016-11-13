@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2016-11-09 04:01:24
+/* Smarty version 3.1.30, created on 2016-11-13 23:15:21
   from "C:\xampp\htdocs\prisma\PrismaInstrumentos\templates\header.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_58229184815019_02003196',
+  'unifunc' => 'content_5828e5f9096711_17473755',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'b43eedbaeb8f820f14219a8a31a6d51e9d07542b' => 
     array (
       0 => 'C:\\xampp\\htdocs\\prisma\\PrismaInstrumentos\\templates\\header.tpl',
-      1 => 1478660480,
+      1 => 1479075317,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_58229184815019_02003196 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5828e5f9096711_17473755 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html>
@@ -62,7 +62,55 @@ function content_58229184815019_02003196 (Smarty_Internal_Template $_smarty_tpl)
     <![endif]-->
   </head>
   <body>
-    
+    <?php if (isset($_smarty_tpl->tpl_vars['msj']->value)) {?>
+      <div class="alert alert-<?php echo $_smarty_tpl->tpl_vars['color']->value;?>
+" role="alert"><?php echo $_smarty_tpl->tpl_vars['msj']->value;?>
+</div>
+    <?php }?>
+    <?php if ((!$_smarty_tpl->tpl_vars['verif']->value)) {?>
+    <div class="row" class="well well-lg" >
+      <div  class="col-md-5 col-md-offset-2">
+        <form id="login" action="index.php?action=login" class="form-inline"  method="POST">
+          <div class="form-group">
+            <label class="sr-only" for="exampleInputEmail3">Email address</label>
+            <input name="user"type="text" class="form-control" id="exampleInputEmail3" placeholder="Email">
+          </div>
+          <div class="form-group">
+            <label class="sr-only" for="exampleInputPassword3">Password</label>
+            <input name="pass" type="password" class="form-control" id="exampleInputPassword3" placeholder="Password">
+          </div>
+          <button type="submit" class="alert alert-success" name="login">Ingresar</button>
+        </form>
+      </div>
+
+      <div class="col-md-5">
+        <form class="form-inline" action="index.php?action=registrarse" method="POST">
+          <div class="form-group">
+            <label class="sr-only" for="exampleInputEmail3">Email address</label>
+            <input name="user"type="text" class="form-control" id="exampleInputEmail3" placeholder="Email">
+          </div>
+          <div class="form-group">
+            <label class="sr-only" for="exampleInputPassword3">Password</label>
+            <input name="pass" type="password" class="form-control" id="exampleInputPassword3" placeholder="Password">
+          </div>
+          <button type="submit" class="alert alert-danger" name="registrarse">Registrarse</button>
+        </form>
+      </div>
+      <?php }?>
+      </div>
+      <?php if (($_smarty_tpl->tpl_vars['verif']->value)) {?>
+      <div class="row">
+        <div class="">
+          <form class="" action="index.php?action=logout" method="post">
+            <button type="submit" action="" class="alert alert-danger" name="">salir</button>
+          </form>
+
+        </div>
+      </div>
+
+      <?php }?>
+
+
     <div class="portada">
       <img class="portada"src="images\portada.jpg" alt="portada" />
     </div>
@@ -91,8 +139,11 @@ function content_58229184815019_02003196 (Smarty_Internal_Template $_smarty_tpl)
           <li class="navbuton"><a href="templates/local.tpl" id="llamadaLocal"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>Como llegar</a></li>
           <li class="navbuton"><a href="templates/instrumentos.tpl" id="llamadaInstGuitarra" ><span class="glyphicon glyphicon-music"></span>Instrumentos </a></li>
           <li class="navbuton"><a href="#contacto"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>Contacto</a></li>
+          <?php if (($_smarty_tpl->tpl_vars['verif']->value)) {?>
+            <?php if ($_smarty_tpl->tpl_vars['tipo']->value == 1) {?>
           <li class="navbuton"><a href="templates/admin.tpl" id="llamadaAdmin"><span class="glyphicon glyphicon-briefcase" aria-hidden="true" ></span>Panel</a></li>
-
+            <?php }?>
+          <?php }?>
           </button>
         </ul>
       </div><!-- /.navbar-collapse -->

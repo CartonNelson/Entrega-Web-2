@@ -14,5 +14,9 @@ public static $ACTION_MOSTRAR_INST= 'mostrarInst';
 public static $ACTION_INICIAR_ADM= 'iniciar_ADM';
 public static $ACTION_ENVIAR_CONTACTO= 'enviarContacto';
 public static $ACTION_EDITAR_PRODUCTO= 'editarProducto';
+public static $ACTION_ELIMINAR_IMAGEN='eliminarImagen';
+public static $ACTION_LOGIN='login';
+public static $ACTION_REGISTRARSE='registrarse';
+public static $ACTION_LOGOUT='logout';
 
 } ?>

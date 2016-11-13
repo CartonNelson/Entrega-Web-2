@@ -4,6 +4,8 @@ require_once ("views/ADM_view.php");
 require_once ("models/instrumentos_model.php");
 require_once ("models/contactoModel.php");
 require_once ("models/categoria_model.php");
+require_once ("models/usuarios_model.php");
+require_once ("controllers/login_controller.php");
 
 class ADM_controller
 {
@@ -11,18 +13,24 @@ class ADM_controller
   private $prodModel;
   private $contactoModel;
   private $catModel;
+  private $login_controller;
   function __construct()
   {
     $this->vista= new ADM_view();
     $this->prodModel= new instrumentos_model();
     $this->catModel= new categoria_model();
     $this->contactoModel= new contactoModel();
+    $this->usuariosModel = new usuarios_model();
+    $this->login_controller = new login_controller();
+
   }
 
   function iniciar_ADM(){
+    $this->login_controller->checkLogin();
     $productos= $this->prodModel->getProductos();
     $categorias= $this->catModel->getCategorias();
-    $this->vista->iniciar_ADM($productos,$categorias);
+    $usuarios=$this->usuariosModel->getUsuarios();
+    $this->vista->iniciar_ADM($productos,$categorias,$usuarios);
 
   }
     function mostrarInst(){

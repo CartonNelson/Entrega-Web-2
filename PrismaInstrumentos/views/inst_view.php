@@ -11,10 +11,19 @@ class inst_view{
     $this->smarty= new Smarty();
     }
 
+
     function iniciar(){
+      $user=false;
+      $this->smarty->assign('verif',$user);
       $this->smarty->display("index.tpl");
 
     }
+    function mostrarMensaje($msj,$color){
+    $this->smarty->assign('msj',$msj);
+    $this->smarty->assign('color',$color);
+    $this->iniciar();
+  }
+
     function mostrarInst($prod,$cat){
       $this->smarty->assign('productos',$prod);
       $this->smarty->assign('categorias',$cat);

@@ -5,7 +5,11 @@ $(document).ready(function(){
   $("#llamadaInstGuitarra").click(cargaGuitarra);
   $("#llamadaLocal").click(cargaUbicacion);
   $("#llamadaAdmin").click(cargaAdmin);
-  $("#contacto").submit(enviaConsulta);
+
+
+
+
+
 
 
 
@@ -121,7 +125,6 @@ function agregarProducto(){
                 function enviaConsulta(){
                     event.preventDefault();
                     formData = new FormData(this);
-                    console.log("formData");
                     $.ajax({
                       method: "POST",
                       url: "index.php?action=enviarContacto",
