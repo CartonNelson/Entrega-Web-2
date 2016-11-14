@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 19-10-2016 a las 08:12:08
+-- Tiempo de generación: 14-11-2016 a las 03:26:30
 -- Versión del servidor: 10.1.13-MariaDB
 -- Versión de PHP: 5.6.21
 
@@ -36,7 +36,6 @@ CREATE TABLE `categorias` (
 --
 
 INSERT INTO `categorias` (`id_categoria`, `categoria`) VALUES
-(13, 'bajos'),
 (3, 'guitarras'),
 (4, 'percusion');
 
@@ -58,7 +57,13 @@ CREATE TABLE `contacto` (
 --
 
 INSERT INTO `contacto` (`nombre`, `email`, `mensaje`, `id_consulta`) VALUES
-('nelson', 'nel144', 'mensaje1', 6);
+('nelson', 'nel144', 'mensaje1', 6),
+('nelson', 'nel144', 'hhhhh', 7),
+('nelson', 's', 'ssss', 8),
+('nelsn', 'nel144', 'DKAUDOUAHDA', 9),
+('nelson', 'nel144', '1111111111111', 10),
+('nelson', 'd', '88888888', 11),
+('nelson ', 'nel144n14', 'mmmmm', 12);
 
 -- --------------------------------------------------------
 
@@ -78,8 +83,7 @@ CREATE TABLE `imagen` (
 
 INSERT INTO `imagen` (`id_imagen`, `path`, `fk_id_cat`) VALUES
 (3, 'images/guitarra_electrica.jpg', 3),
-(4, 'images/Bateria.jpg', 4),
-(11, 'images/5806e6dd82da6_bajo.jpg', 13);
+(4, 'images/Bateria.jpg', 4);
 
 -- --------------------------------------------------------
 
@@ -101,15 +105,34 @@ CREATE TABLE `productos` (
 --
 
 INSERT INTO `productos` (`id_producto`, `categoria`, `marca`, `modelo`, `precio`, `stock`) VALUES
-(6, 'guitarras', 'gibson', 'sg', 20000, 0),
-(7, 'guitarras', 'gibson', 'Flying V 2016 HP', 12000, 0),
-(9, 'guitarras', 'fender', 'Blacktop Telecaster HH', 12000, 1),
+(6, 'guitarras', 'ephipone ', 'les paul ', 21000, 0),
+(7, 'guitarras', 'ephipone', 'Flying V 2016 HP', 15000, 0),
+(9, 'guitarras', 'fender', 'Blacktop Telecaster HH', 12000, 0),
 (10, 'percusion', 'Gretsch', 'Catalina Ash Danys 41074 (5 Cuerpos)', 23000, 0),
-(11, 'percusion', 'Resound', 'Danys 41088 (5 Cuerpos)', 15000, 0),
-(12, 'percusion', 'mapex', 'Voyager Vr5254', 14600, 0),
-(13, 'bajos', 'gibson', '2014 SG Standard Bass', 13000, 1),
-(14, 'bajos', 'fender', 'Jazz Bass', 15000, 0),
-(15, 'bajos', 'squier', 'Jaguar Bass Special Vintage', 16000, 0);
+(11, 'percusion', 'Resound', 'Danys 41088 (5 Cuerpos)', 16800, 1),
+(12, 'percusion', 'mapex', 'Voyager Vr5254', 14600, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `user`
+--
+
+CREATE TABLE `user` (
+  `id_usuario` int(200) NOT NULL,
+  `email` varchar(200) NOT NULL,
+  `pass` varchar(500) NOT NULL,
+  `permiso_adm` int(1) NOT NULL DEFAULT '0'
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `user`
+--
+
+INSERT INTO `user` (`id_usuario`, `email`, `pass`, `permiso_adm`) VALUES
+(2, 'ivan', '$2y$10$TTe1uHyUAcxgzQHWoJU4eeT9C0NLjCetGFrjhuNGzLCtcWU6e.XMu', 0),
+(3, 'nelson', '$2y$10$hMIdjWdIe4E9rPztvUPqwuZZAK5jwH7oqMMvaJDNwboFlNhODPL8u', 1),
+(5, 'nava', '$2y$10$z4NX7e/0Rk28/g9ejAhUEeJNBo5PG7QUgaQ2Qb.bNiGjRdPRK7frC', 0);
 
 --
 -- Índices para tablas volcadas
@@ -145,6 +168,12 @@ ALTER TABLE `productos`
   ADD KEY `categoria_2` (`categoria`);
 
 --
+-- Indices de la tabla `user`
+--
+ALTER TABLE `user`
+  ADD PRIMARY KEY (`id_usuario`);
+
+--
 -- AUTO_INCREMENT de las tablas volcadas
 --
 
@@ -152,22 +181,27 @@ ALTER TABLE `productos`
 -- AUTO_INCREMENT de la tabla `categorias`
 --
 ALTER TABLE `categorias`
-  MODIFY `id_categoria` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id_categoria` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT de la tabla `contacto`
 --
 ALTER TABLE `contacto`
-  MODIFY `id_consulta` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_consulta` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 --
 -- AUTO_INCREMENT de la tabla `imagen`
 --
 ALTER TABLE `imagen`
-  MODIFY `id_imagen` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id_imagen` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT de la tabla `productos`
 --
 ALTER TABLE `productos`
-  MODIFY `id_producto` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id_producto` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+--
+-- AUTO_INCREMENT de la tabla `user`
+--
+ALTER TABLE `user`
+  MODIFY `id_usuario` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- Restricciones para tablas volcadas
 --
