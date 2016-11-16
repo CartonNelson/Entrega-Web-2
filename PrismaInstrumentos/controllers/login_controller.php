@@ -27,6 +27,9 @@ class login_controller
           $this->vista_inicial->mostrarMensaje("Usted se ha registrado exitosamente, inicie sesion","success");
 
 
+        }else
+        {
+              $this->vista_inicial->mostrarMensaje("Debe rellenar los campos","danger");
         }
 
 
@@ -50,6 +53,7 @@ class login_controller
             $verif=true;
 
             $this->vista->iniciar_user($verif,$tipo);
+
             die();
 
           }else{
@@ -74,10 +78,8 @@ class login_controller
  }
 
 
-
-
   public function logout(){
-    session_start();
+  session_start();
    session_destroy();
 
     header("Location: index.php");

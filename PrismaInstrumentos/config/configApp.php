@@ -18,5 +18,6 @@ public static $ACTION_ELIMINAR_IMAGEN='eliminarImagen';
 public static $ACTION_LOGIN='login';
 public static $ACTION_REGISTRARSE='registrarse';
 public static $ACTION_LOGOUT='logout';
+public static $ACTION_DAR_PERMISO="darPermiso";
 
 } ?>

@@ -14,6 +14,9 @@ class ADM_controller
   private $contactoModel;
   private $catModel;
   private $login_controller;
+  private $usuariosModel;
+
+
   function __construct()
   {
     $this->vista= new ADM_view();
@@ -22,6 +25,8 @@ class ADM_controller
     $this->contactoModel= new contactoModel();
     $this->usuariosModel = new usuarios_model();
     $this->login_controller = new login_controller();
+
+
 
   }
 
@@ -162,6 +167,16 @@ class ADM_controller
 
             }
         }
+      }
+
+
+
+      function darPermiso(){
+          if (isset($_REQUEST['id'])){
+            $id = $_REQUEST['id'];
+            $this->usuariosModel->editarPermiso($id);
+          }
+
       }
 
 }

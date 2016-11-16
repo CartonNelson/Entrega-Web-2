@@ -36,6 +36,13 @@ class instrumentos_model extends model
     $sentencia = $this->db->prepare("update productos set stock=? where id_producto=?");
     $sentencia->execute(array(!($prod['stock']),$info));
   }
+
+
+
+
+
+
+  
   function editarProducto($marca,$modelo,$precio,$categoria,$id_producto){
     if (!empty($marca)) {
      $sentencia = $this->db->prepare("update productos set marca=? where id_producto=?");

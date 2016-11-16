@@ -16,9 +16,9 @@
                       <td class="marca">{$user.email}</td>
 
                       {if $user['permiso_adm']==0}
-                      <td class="marca"><a class="" data-stock="{$user['id_usuario']}" href="#">Regular</td>
+                      <td class="marca"><a class="darPermiso" data-user="{$user['id_usuario']}" href="#">Regular</td>
                       {else}
-                      <td class="marca"><a class="" data-stock="{$user['id_usuario']}" href="#">Administrador</td>
+                      <td class="marca"><a class="darPermiso" data-user="{$user['id_usuario']}" href="#">Administrador</td>
 
                       {/if}
 

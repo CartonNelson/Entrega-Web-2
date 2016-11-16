@@ -106,10 +106,13 @@
           <li class="navbuton"><a href="templates/instrumentos.tpl" id="llamadaInstGuitarra" ><span class="glyphicon glyphicon-music"></span>Instrumentos </a></li>
           <li class="navbuton"><a href="#contacto"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>Contacto</a></li>
           {if ($verif)}
-            {if $tipo==1}
-          <li class="navbuton"><a href="templates/admin.tpl" id="llamadaAdmin"><span class="glyphicon glyphicon-briefcase" aria-hidden="true" ></span>Panel</a></li>
+            {if ($tipo==1)||($tipo==5)}
+            <li class="navbuton"><a href="templates/admin.tpl" id="llamadaAdmin"><span class="glyphicon glyphicon-briefcase" aria-hidden="true" ></span>Panel</a></li>
+
             {/if}
+
           {/if}
+
           </button>
         </ul>
       </div><!-- /.navbar-collapse -->

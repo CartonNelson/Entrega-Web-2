@@ -4,7 +4,7 @@ abstract class model{
 
   protected $db;
 
-//  function __construct()
+ //function __construct()
   //{
     //$this->db = new PDO('mysql:host=localhost;dbname=instrumento;charset=utf8', 'root', '');
   //}

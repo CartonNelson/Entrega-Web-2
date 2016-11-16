@@ -71,6 +71,9 @@ switch ($_REQUEST[ConfigApp::$ACTION]) {
                                                 case ConfigApp::$ACTION_LOGOUT:
                                                   $login_controller->logout();
                                                     break;
+                                                    case ConfigApp::$ACTION_DAR_PERMISO:
+                                                      $ADM_controller->darPermiso();
+                                                        break;
 
 }
  ?>

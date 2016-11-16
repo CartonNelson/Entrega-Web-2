@@ -38,6 +38,17 @@ function eliminarCategoria(){
   });
 
 }
+function darPermiso(){
+  event.preventDefault();
+
+  $.get("index.php?action=darPermiso&id="+ $(this).attr("data-user"), function(data) {
+  $('#llamada').html(data);
+
+  cargaAdmin();
+
+  });
+
+}
 
 function editarStock(){
   event.preventDefault();
@@ -154,6 +165,7 @@ function cargaAdmin(){
      $("#formEditarCategoria").submit(editarCategoria);
      $("#formNewCat").submit(agregarCategoria);
      $("#formEditarProducto").submit(editarProducto);
+     $(".darPermiso").click(darPermiso);
    });
   render(cargas);
 }

@@ -3,6 +3,6 @@
 define("HOST", "localhost");
 define("USUARIO", "root");
 define("DBPASS", "");
-define("DBNAME", "prueba ");
+define("DBNAME", "prueba");
 
 ?>

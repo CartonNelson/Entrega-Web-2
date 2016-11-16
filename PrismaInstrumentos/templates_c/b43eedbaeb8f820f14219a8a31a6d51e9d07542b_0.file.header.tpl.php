@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2016-11-13 23:15:21
+/* Smarty version 3.1.30, created on 2016-11-16 00:48:17
   from "C:\xampp\htdocs\prisma\PrismaInstrumentos\templates\header.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5828e5f9096711_17473755',
+  'unifunc' => 'content_582b9ec1c040a7_39891143',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'b43eedbaeb8f820f14219a8a31a6d51e9d07542b' => 
     array (
       0 => 'C:\\xampp\\htdocs\\prisma\\PrismaInstrumentos\\templates\\header.tpl',
-      1 => 1479075317,
+      1 => 1479253693,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5828e5f9096711_17473755 (Smarty_Internal_Template $_smarty_tpl) {
+function content_582b9ec1c040a7_39891143 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html>
@@ -140,10 +140,13 @@ function content_5828e5f9096711_17473755 (Smarty_Internal_Template $_smarty_tpl)
           <li class="navbuton"><a href="templates/instrumentos.tpl" id="llamadaInstGuitarra" ><span class="glyphicon glyphicon-music"></span>Instrumentos </a></li>
           <li class="navbuton"><a href="#contacto"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>Contacto</a></li>
           <?php if (($_smarty_tpl->tpl_vars['verif']->value)) {?>
-            <?php if ($_smarty_tpl->tpl_vars['tipo']->value == 1) {?>
-          <li class="navbuton"><a href="templates/admin.tpl" id="llamadaAdmin"><span class="glyphicon glyphicon-briefcase" aria-hidden="true" ></span>Panel</a></li>
+            <?php if (($_smarty_tpl->tpl_vars['tipo']->value == 1) || ($_smarty_tpl->tpl_vars['tipo']->value == 5)) {?>
+            <li class="navbuton"><a href="templates/admin.tpl" id="llamadaAdmin"><span class="glyphicon glyphicon-briefcase" aria-hidden="true" ></span>Panel</a></li>
+
             <?php }?>
+
           <?php }?>
+
           </button>
         </ul>
       </div><!-- /.navbar-collapse -->

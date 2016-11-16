@@ -16,6 +16,7 @@ class ADM_view{
       $this->smarty->assign('productos',$prod);
       $this->smarty->assign('categorias',$cat);
       $this->smarty->assign('usuarios',$users);
+    
 
       $this->smarty->display("admin.tpl");
     }

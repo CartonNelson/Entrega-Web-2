@@ -21,9 +21,26 @@ class usuarios_model extends model
 
       }
   function getUsuarios(){
-      $sentencia = $this->db->prepare( "select * from user where permiso_adm != 1");
+      $sentencia = $this->db->prepare( "select * from user where permiso_adm != 5");
       $sentencia->execute();
       return $sentencia->fetchAll(PDO::FETCH_ASSOC);
+  }
+
+  function getUser_id($id){
+     $sentencia = $this->db->prepare( "select * from user where id_usuario = ?");
+     $sentencia->execute(array($id));
+
+     return $sentencia->fetch(PDO::FETCH_ASSOC);
+
+   }
+
+  function editarPermiso($id){
+
+    $usuario=$this->getUser_id($id);
+    $sentencia = $this->db->prepare("update user set permiso_adm=? where id_usuario=?");
+    $sentencia->execute(array(!($usuario['permiso_adm']),$id));
+
+
   }
 
 
