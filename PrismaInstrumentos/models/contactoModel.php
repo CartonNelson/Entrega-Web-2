@@ -1,5 +1,5 @@
 <?php
-include_once ("models/model.php");
+include_once ('models/model.php');
 class contactoModel extends model
 {
 
@@ -8,3 +8,4 @@ class contactoModel extends model
      $sentencia->execute( array(":nombre"=>$consulta['nombre'] ,":email"=>$consulta['email'],":mensaje"=>$consulta['mensaje']));
    }
 }
+ ?>

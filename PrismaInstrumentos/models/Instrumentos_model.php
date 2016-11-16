@@ -42,7 +42,7 @@ class instrumentos_model extends model
 
 
 
-  
+
   function editarProducto($marca,$modelo,$precio,$categoria,$id_producto){
     if (!empty($marca)) {
      $sentencia = $this->db->prepare("update productos set marca=? where id_producto=?");
