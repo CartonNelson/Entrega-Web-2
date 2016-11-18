@@ -9,6 +9,7 @@ class login_controller
   private $model;
   private $vista;
   private $vista_inicial;
+  private $tipoSesion;
   function __construct()
   {
     $this->model= new usuarios_model;
@@ -48,22 +49,28 @@ class login_controller
           if(password_verify($pass, $hash))
           {
             session_start();
+
             $_SESSION['USER'] = $user;
-            $tipo= $this->model->getUser($user)["permiso_adm"];
+            $tipoSesion= $this->model->getUser($user)["permiso_adm"];
             $verif=true;
 
-            $this->vista->iniciar_user($verif,$tipo);
-
+            $this->vista->iniciar_user($verif,$tipoSesion);
+            //header ("Location: index.php");
             die();
 
           }else{
             $this->vista_inicial->mostrarMensaje("Usuario o contraseña incorrecto","danger");
           }
+
     }
       else
       {
             $this->vista_inicial->mostrarMensaje("Debe rellenar los campos","danger");
       }
+
+  }
+  function getTipo (){
+    return $this->model->getUser($_SESSION['USER'])["permiso_adm"];
 
   }
 
@@ -86,8 +93,6 @@ class login_controller
 
    die();
  }
-
-
 
 
 

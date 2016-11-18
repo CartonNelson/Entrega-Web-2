@@ -1,4 +1,6 @@
 <?php
+include_once 'sql/config.php';
+
  require_once('controllers/ADM_controller.php');
  require_once('controllers/user_controller.php');
  require_once('controllers/login_controller.php');

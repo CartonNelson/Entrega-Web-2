@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2016-10-25 04:37:37
+/* Smarty version 3.1.30, created on 2016-11-18 03:35:14
   from "C:\xampp\htdocs\prisma\PrismaInstrumentos\templates\footer.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_580ec5714f2d47_96706954',
+  'unifunc' => 'content_582e68e24b68e4_00914695',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '286fa02491424e07572d8d3de597ac1027ee2d87' => 
     array (
       0 => 'C:\\xampp\\htdocs\\prisma\\PrismaInstrumentos\\templates\\footer.tpl',
-      1 => 1477107269,
+      1 => 1479436511,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_580ec5714f2d47_96706954 (Smarty_Internal_Template $_smarty_tpl) {
+function content_582e68e24b68e4_00914695 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <footer>
       <p>Copyright 2016|Todos los derechos reservados Prisma Instrumentos SA.|John Lennon, 7000|Tandil|Buenos Aires|Argentina</p>
@@ -42,6 +42,10 @@ function content_580ec5714f2d47_96706954 (Smarty_Internal_Template $_smarty_tpl)
           <?php echo '<script'; ?>
  type="text/javascript" src="js/tabla.js">
           <?php echo '</script'; ?>
+>
+          
+          <?php echo '<script'; ?>
+ src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.1.3/mustache.js"><?php echo '</script'; ?>
 >
 </body>
 </html>

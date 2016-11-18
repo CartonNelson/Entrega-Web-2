@@ -8,3 +8,4 @@ class contactoModel extends model
      $sentencia->execute( array(":nombre"=>$consulta['nombre'] ,":email"=>$consulta['email'],":mensaje"=>$consulta['mensaje']));
    }
 }
+?>

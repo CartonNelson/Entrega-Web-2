@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2016-11-16 01:28:30
+/* Smarty version 3.1.30, created on 2016-11-18 00:19:59
   from "C:\xampp\htdocs\prisma\PrismaInstrumentos\templates\admin.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_582ba82e108f72_84520573',
+  'unifunc' => 'content_582e3b1f680669_69898341',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '6fb535b8a5d9f1c7af7a64902c4634db7b3dcaa8' => 
     array (
       0 => 'C:\\xampp\\htdocs\\prisma\\PrismaInstrumentos\\templates\\admin.tpl',
-      1 => 1479256097,
+      1 => 1479424316,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:usuarios.tpl' => 1,
   ),
 ),false)) {
-function content_582ba82e108f72_84520573 (Smarty_Internal_Template $_smarty_tpl) {
+function content_582e3b1f680669_69898341 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 
@@ -181,14 +181,16 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
 
 
     </div>
-
+    <?php if ($_smarty_tpl->tpl_vars['tipo']->value == 5) {?>
     <h1>USUARIOS</h1>
     <div class="">
       <?php $_smarty_tpl->_subTemplateRender("file:usuarios.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
     </div>
-    
+    <?php }?>
+
+
 
   </body>
 <?php }

@@ -106,11 +106,13 @@
       {include file='lista_cat.tpl'}
 
     </div>
-
+    {if $tipo==5}
     <h1>USUARIOS</h1>
     <div class="">
       {include file='usuarios.tpl'}
     </div>
-    
+    {/if }
+
+
 
   </body>

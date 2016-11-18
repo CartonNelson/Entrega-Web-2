@@ -1,6 +1,6 @@
 <?php
 
-define("SQLFILE", "prisma.sql");
+define("SQLFILE","prisma.sql");
 
 include '../libs/Smarty.class.php';
 $smarty = new Smarty();

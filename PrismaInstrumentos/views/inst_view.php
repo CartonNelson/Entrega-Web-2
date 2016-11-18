@@ -24,19 +24,20 @@ class inst_view{
     $this->iniciar();
   }
 
-    function mostrarInst($prod,$cat){
-      $this->smarty->assign('productos',$prod);
-      $this->smarty->assign('categorias',$cat);
-      $this->smarty->display("instrumentos.tpl");
-    }
-    function mostrarCat($categorias){
-      $this->smarty->assign('categorias',$categorias);
-      $this->smarty->display('lista_cat.tpl');
-    }
-    function mostrarProductos($productos){
-      $this->smarty->assign('productos',$productos);
-      $this->smarty->display('lista_prod.tpl');
-    }
+
+    // function mostrarInst($prod,$cat){
+    //   $this->smarty->assign('productos',$prod);
+    //   $this->smarty->assign('categorias',$cat);
+    //   $this->smarty->display("instrumentos.tpl");
+    // }
+    // function mostrarCat($categorias){
+    //   $this->smarty->assign('categorias',$categorias);
+    //   $this->smarty->display('lista_cat.tpl');
+    // }
+    // function mostrarProductos($productos){
+    //   $this->smarty->assign('productos',$productos);
+    //   $this->smarty->display('lista_prod.tpl');
+    // }
 
 }
 

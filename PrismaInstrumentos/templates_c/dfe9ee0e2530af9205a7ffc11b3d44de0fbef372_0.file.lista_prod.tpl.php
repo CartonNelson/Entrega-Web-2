@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2016-10-26 20:43:28
+/* Smarty version 3.1.30, created on 2016-11-17 23:49:40
   from "C:\xampp\htdocs\prisma\PrismaInstrumentos\templates\lista_prod.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5810f950302a35_25843755',
+  'unifunc' => 'content_582e340485c482_20975894',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'dfe9ee0e2530af9205a7ffc11b3d44de0fbef372' => 
     array (
       0 => 'C:\\xampp\\htdocs\\prisma\\PrismaInstrumentos\\templates\\lista_prod.tpl',
-      1 => 1477507287,
+      1 => 1477590346,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5810f950302a35_25843755 (Smarty_Internal_Template $_smarty_tpl) {
+function content_582e340485c482_20975894 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 
     <table>

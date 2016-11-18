@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2016-10-25 04:38:08
+/* Smarty version 3.1.30, created on 2016-11-18 16:24:56
   from "C:\xampp\htdocs\prisma\PrismaInstrumentos\templates\instrumentos.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_580ec590c18442_89750263',
+  'unifunc' => 'content_582f1d48d88944_53819715',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '332d156766e62e7782dabed0a4276786489a0561' => 
     array (
       0 => 'C:\\xampp\\htdocs\\prisma\\PrismaInstrumentos\\templates\\instrumentos.tpl',
-      1 => 1477107770,
+      1 => 1479482686,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_580ec590c18442_89750263 (Smarty_Internal_Template $_smarty_tpl) {
+function content_582f1d48d88944_53819715 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <article>
   <section>
@@ -42,6 +42,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
 
     </ul>
   </section>
+
 </article>
 <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['categorias']->value, 'cat');
@@ -126,7 +127,10 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
 ?>
 
 
+<button id="mostrarComentarios" type="button" class="btn btn-default btn-xs pull-right" >comentarios</button>
+<div id="coments">
 
+</div>
 
 <?php echo '<script'; ?>
  type="text/javascript" src="js/tabla.js">

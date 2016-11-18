@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 14-11-2016 a las 03:26:30
+-- Tiempo de generación: 18-11-2016 a las 17:47:54
 -- Versión del servidor: 10.1.13-MariaDB
 -- Versión de PHP: 5.6.21
 
@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `instrumento`
+-- Base de datos: `prueba`
 --
 
 -- --------------------------------------------------------
@@ -38,6 +38,28 @@ CREATE TABLE `categorias` (
 INSERT INTO `categorias` (`id_categoria`, `categoria`) VALUES
 (3, 'guitarras'),
 (4, 'percusion');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `comentario`
+--
+
+CREATE TABLE `comentario` (
+  `id_coment` int(200) NOT NULL,
+  `user` varchar(200) NOT NULL,
+  `texto` varchar(500) NOT NULL,
+  `rate` int(1) NOT NULL,
+  `producto` varchar(200) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `comentario`
+--
+
+INSERT INTO `comentario` (`id_coment`, `user`, `texto`, `rate`, `producto`) VALUES
+(1, 'nelson', 'akaknja', 3, 'gibson sg'),
+(2, 'ivan', 'holaaaa', 4, 'bateria rex');
 
 -- --------------------------------------------------------
 
@@ -106,7 +128,7 @@ CREATE TABLE `productos` (
 
 INSERT INTO `productos` (`id_producto`, `categoria`, `marca`, `modelo`, `precio`, `stock`) VALUES
 (6, 'guitarras', 'ephipone ', 'les paul ', 21000, 0),
-(7, 'guitarras', 'ephipone', 'Flying V 2016 HP', 15000, 0),
+(7, 'guitarras', 'ephipone', 'Flying V 2016 HP', 15000, 1),
 (9, 'guitarras', 'fender', 'Blacktop Telecaster HH', 12000, 0),
 (10, 'percusion', 'Gretsch', 'Catalina Ash Danys 41074 (5 Cuerpos)', 23000, 0),
 (11, 'percusion', 'Resound', 'Danys 41088 (5 Cuerpos)', 16800, 1),
@@ -122,7 +144,7 @@ CREATE TABLE `user` (
   `id_usuario` int(200) NOT NULL,
   `email` varchar(200) NOT NULL,
   `pass` varchar(500) NOT NULL,
-  `permiso_adm` int(1) NOT NULL DEFAULT '0'
+  `permiso_adm` int(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -130,9 +152,10 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id_usuario`, `email`, `pass`, `permiso_adm`) VALUES
-(2, 'ivan', '$2y$10$TTe1uHyUAcxgzQHWoJU4eeT9C0NLjCetGFrjhuNGzLCtcWU6e.XMu', 0),
-(3, 'nelson', '$2y$10$hMIdjWdIe4E9rPztvUPqwuZZAK5jwH7oqMMvaJDNwboFlNhODPL8u', 1),
-(5, 'nava', '$2y$10$z4NX7e/0Rk28/g9ejAhUEeJNBo5PG7QUgaQ2Qb.bNiGjRdPRK7frC', 0);
+(3, 'nelson', '$2y$10$hMIdjWdIe4E9rPztvUPqwuZZAK5jwH7oqMMvaJDNwboFlNhODPL8u', 5),
+(6, 'ivan', '$2y$10$iYeSqGEw/imjCn6MjMNdceG3P4u9U5zqzBct7H3iVDKY8DHjhFKG2', 1),
+(8, 'nava', '$2y$10$cq2gErPb5NYW2M1gwSp3Q.je061Ib./i.bY5ZvwvFFw9KufLPXTkC', 0),
+(9, 'silvin', '$2y$10$SRHzs4YJrsYQDimhogI0tO6gG9UQGIcfVrPM/vdubT.I31UCv8mGK', 0);
 
 --
 -- Índices para tablas volcadas
@@ -145,6 +168,12 @@ ALTER TABLE `categorias`
   ADD PRIMARY KEY (`id_categoria`),
   ADD KEY `categoria` (`categoria`),
   ADD KEY `id_categoria` (`id_categoria`);
+
+--
+-- Indices de la tabla `comentario`
+--
+ALTER TABLE `comentario`
+  ADD PRIMARY KEY (`id_coment`);
 
 --
 -- Indices de la tabla `contacto`
@@ -183,6 +212,11 @@ ALTER TABLE `user`
 ALTER TABLE `categorias`
   MODIFY `id_categoria` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
+-- AUTO_INCREMENT de la tabla `comentario`
+--
+ALTER TABLE `comentario`
+  MODIFY `id_coment` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+--
 -- AUTO_INCREMENT de la tabla `contacto`
 --
 ALTER TABLE `contacto`
@@ -201,7 +235,7 @@ ALTER TABLE `productos`
 -- AUTO_INCREMENT de la tabla `user`
 --
 ALTER TABLE `user`
-  MODIFY `id_usuario` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_usuario` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 --
 -- Restricciones para tablas volcadas
 --

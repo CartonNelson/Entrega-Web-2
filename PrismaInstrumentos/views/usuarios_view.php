@@ -18,12 +18,13 @@ class usuarios_view{
 
      $this->smarty->display("index.tpl");
 
+
    }
-   function mostrarInst($prod,$cat){
-     $this->smarty->assign('productos',$prod);
-     $this->smarty->assign('categorias',$cat);
-     $this->smarty->display("instrumentos.tpl");
-   }
+  //  function mostrarInst($prod,$cat){
+  //    $this->smarty->assign('productos',$prod);
+  //    $this->smarty->assign('categorias',$cat);
+  //    $this->smarty->display("instrumentos.tpl");
+  //  }
 
 }
 

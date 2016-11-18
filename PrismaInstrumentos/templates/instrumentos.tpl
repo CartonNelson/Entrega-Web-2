@@ -7,6 +7,7 @@
 
     </ul>
   </section>
+
 </article>
 {foreach from=$categorias item=$cat}
 <div class="row">
@@ -57,7 +58,10 @@
 </div>
 {/foreach}
 
+<button id="mostrarComentarios" type="button" class="btn btn-default btn-xs pull-right" >comentarios</button>
+<div id="coments">
 
+</div>
 
 <script type="text/javascript" src="js/tabla.js">
 
