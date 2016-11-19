@@ -28,6 +28,8 @@ class login_controller
           $this->vista_inicial->mostrarMensaje("Usted se ha registrado exitosamente, inicie sesion","success");
 
 
+
+
         }else
         {
               $this->vista_inicial->mostrarMensaje("Debe rellenar los campos","danger");
@@ -41,7 +43,7 @@ class login_controller
 
 
   public function login(){
-    if ((isset($_REQUEST['user']))&&(!empty($_REQUEST['user']))) {
+    if ((isset($_REQUEST['user']))&&(!empty($_REQUEST['user']))&&(isset($_REQUEST['pass']))&&(!empty($_REQUEST['pass']))) {
       $user = $_REQUEST['user'];
       $pass = $_REQUEST['pass'];
       $hash = $this->model->getUser($user)["pass"];

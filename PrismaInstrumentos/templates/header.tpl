@@ -53,7 +53,7 @@
         <form class="form-inline" action="index.php?action=registrarse" method="POST">
           <div class="form-group">
             <label class="sr-only" for="exampleInputEmail3">Email address</label>
-            <input name="user"type="text" class="form-control" id="exampleInputEmail3" placeholder="Email">
+            <input name="user"type="email" class="form-control" id="exampleInputEmail3" placeholder="Email">
           </div>
           <div class="form-group">
             <label class="sr-only" for="exampleInputPassword3">Password</label>

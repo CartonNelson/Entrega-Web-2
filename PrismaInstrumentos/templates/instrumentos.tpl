@@ -58,8 +58,8 @@
 </div>
 {/foreach}
 
-<button id="mostrarComentarios" type="button" class="btn btn-default btn-xs pull-right" >comentarios</button>
-<div id="coments">
+
+<div class="col-md-6 col-xs-12"  id="coments">
 
 </div>
 

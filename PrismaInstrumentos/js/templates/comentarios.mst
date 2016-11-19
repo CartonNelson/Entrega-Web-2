@@ -1,10 +1,29 @@
 
-<h1 >Holaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</h1>
 {{#paquete}}
-  <li>
+<div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+        </div><!-- /col-sm-12 -->
+      </div><!-- /row -->
+      <div class="row">
+          <div class="col-sm-1">
+            <div class="thumbnail">
+              <img class="img-responsive user-photo" src="https://ssl.gstatic.com/accounts/ui/avatar_2x.png">
+            </div><!-- /thumbnail -->
+          </div><!-- /col-sm-1 -->
 
-      {{texto}}
+          <div class="col-sm-7">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                  <strong>{{user}}</strong> <span class="text-muted">{{producto}}</span>
+                  <strong>{{rate}}<span class="glyphicon glyphicon-star" aria-hidden="true"></span></strong> 
 
-
-  </li>
+                </div>
+              <div class="panel-body">
+                {{texto}}
+              </div><!-- /panel-body -->
+            </div><!-- /panel panel-default -->
+          </div><!-- /col-sm-5 -->
+      </div><!-- /container -->
+</div>
 {{/paquete}}

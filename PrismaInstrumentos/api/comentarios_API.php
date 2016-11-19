@@ -32,7 +32,7 @@ class comentarios_API extends Api
         case 'POST' :
 
          if(count($argumentos)==0){
-              $comentario= $this->model->crearComentario($_POST['usuario'],$_POST['texto'],$_POST['rate'],$_POST['producto']);
+              $comentario= $this->model->crearComentario($_POST['user'],$_POST['texto'],$_POST['rate'],$_POST['producto']);
               $error['Error'] = "El comentario no se creo";
               $success['Success'] = "El comentario se creo";
               return($comentario==1) ? $success : $error;
@@ -46,10 +46,6 @@ class comentarios_API extends Api
             }
 
             break;
-
-          case 'PUT':
-
-          break;
 
 
       default:

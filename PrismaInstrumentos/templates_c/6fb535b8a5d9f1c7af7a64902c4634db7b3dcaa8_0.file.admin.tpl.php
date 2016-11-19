@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2016-11-18 00:19:59
+/* Smarty version 3.1.30, created on 2016-11-18 20:28:33
   from "C:\xampp\htdocs\prisma\PrismaInstrumentos\templates\admin.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_582e3b1f680669_69898341',
+  'unifunc' => 'content_582f5661d4a112_68553254',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '6fb535b8a5d9f1c7af7a64902c4634db7b3dcaa8' => 
     array (
       0 => 'C:\\xampp\\htdocs\\prisma\\PrismaInstrumentos\\templates\\admin.tpl',
-      1 => 1479424316,
+      1 => 1479497299,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:usuarios.tpl' => 1,
   ),
 ),false)) {
-function content_582e3b1f680669_69898341 (Smarty_Internal_Template $_smarty_tpl) {
+function content_582f5661d4a112_68553254 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 
@@ -190,7 +190,10 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
     </div>
     <?php }?>
 
+    <h1>Comentarios</h1>
+    <div class="col-md-6 col-xs-12"  id="coments">
 
+    </div>
 
   </body>
 <?php }

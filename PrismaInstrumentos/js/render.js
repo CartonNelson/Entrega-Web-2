@@ -10,6 +10,7 @@ $(document).ready(function(){
 function cargaAdmin(){
   event.preventDefault();
   var cargas=$("#llamadaAdmin").attr('href');
+
   $.get("index.php?action=iniciar_ADM",function(data) {
 
   $('#llamada').html(data);
@@ -21,6 +22,12 @@ function cargaAdmin(){
   $("#formNewCat").submit(agregarCategoria);
   $("#formEditarProducto").submit(editarProducto);
   $(".darPermiso").click(darPermiso);
+  $(document).ready(function(){
+    var refreshId = setInterval(getComents, 2000);
+    $.ajaxSetup({ cache: false });
+  });
+   event.preventDefault();
+
   });
   render(cargas);
 }
@@ -184,18 +191,14 @@ function enviaConsulta(){
     var cargas=$("#llamadaInstGuitarra").attr('href');
     $.post( "index.php?action=mostrarInst",function(data) {
    $('#llamada').html(data);
-   $('#mostrarComentarios').click(function(event){
+       $(document).ready(function(){
+         var refreshId = setInterval(getComents, 2000);
+         $.ajaxSetup({ cache: false });
+       });
+
      event.preventDefault();
-     console.log(createComment);
-     $.ajax(
-       {
-         method:"GET",
-         dataType: "JSON",
-         url: "api/coment",
-         success: createComment
-       }
-     )
-   });
+
+
 
   });
   render(cargas);
@@ -214,11 +217,19 @@ function  cargaHist(){
 
 
 }
+function getComents(){
+$.ajax({
+    method:"GET",
+    dataType: "JSON",
+    url: "api/coment",
+    success: createComment
+  });
+}
+
 
 function createComment(coments){
       console.log(coments);
      var rendered = Mustache.render(template,{paquete:coments});
-
      $('#coments').html(rendered);
 
 }
