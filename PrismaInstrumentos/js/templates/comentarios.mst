@@ -1,4 +1,4 @@
-
+<h1>hola</h1>
 {{#paquete}}
 <div class="container">
       <div class="row">
@@ -16,7 +16,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading">
                   <strong>{{user}}</strong> <span class="text-muted">{{producto}}</span>
-                  <strong>{{rate}}<span class="glyphicon glyphicon-star" aria-hidden="true"></span></strong> 
+                  <strong>{{rate}}<span class="glyphicon glyphicon-star" aria-hidden="true"></span></strong>
 
                 </div>
               <div class="panel-body">

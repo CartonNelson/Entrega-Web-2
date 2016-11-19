@@ -1,5 +1,9 @@
 <?php
+
 //include_once 'sql/config.php';
+
+
+
 abstract class model{
 
   protected $db;

@@ -1,8 +1,9 @@
 <?php
-require 'Api.php';
+require 'api.php';
 require '../models/comentarios_model.php';
 include_once '../sql/config.php';
-class comentarios_API extends Api
+
+class comentarios_API extends api
 {
   private $model;
   public function __construct($request)
@@ -30,8 +31,7 @@ class comentarios_API extends Api
         }
         break;
         case 'POST' :
-
-         if(count($argumentos)==0){
+        if(count($argumentos)==0){
               $comentario= $this->model->crearComentario($_POST['user'],$_POST['texto'],$_POST['rate'],$_POST['producto']);
               $error['Error'] = "El comentario no se creo";
               $success['Success'] = "El comentario se creo";
@@ -46,7 +46,6 @@ class comentarios_API extends Api
             }
 
             break;
-
 
       default:
            return "Only accepts GET";

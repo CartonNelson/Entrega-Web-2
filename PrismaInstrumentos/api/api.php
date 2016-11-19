@@ -1,8 +1,11 @@
 <?php
-abstract class Api{
+abstract class api{
   protected $method = "";
   protected $endpoint = "";
   protected $args = array();
+
+
+
 
 
 
@@ -15,6 +18,9 @@ abstract class Api{
   }
 
 
+
+
+
   public function processAPI() {
      if (method_exists($this, $this->endpoint)) {
        //llama al metodo que se llama como dice "endpoint" (similar a un switch)
@@ -25,12 +31,11 @@ abstract class Api{
    }
 
 
+
    private function _response($data, $status = 200) {
        header("HTTP/1.1 " . $status . " " . $this->_requestStatus($status));
        return json_encode($data);
    }
-
-
    private function _requestStatus($code){
        $status = array(
          200 => "OK",
