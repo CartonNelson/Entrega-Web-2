@@ -5,7 +5,6 @@ $(document).ready(function(){
   $("#llamadaInstGuitarra").click(cargaGuitarra);
   $("#llamadaLocal").click(cargaUbicacion);
   $("#llamadaAdmin").click(cargaAdmin);
-    $(".borrar").click(hola);
 
 function cargaAdmin(){
   event.preventDefault();
@@ -22,6 +21,11 @@ function cargaAdmin(){
   $("#formNewCat").submit(agregarCategoria);
   $("#formEditarProducto").submit(editarProducto);
   $(".darPermiso").click(darPermiso);
+  $(document).on("click", ".borrar", function(){
+  borrarComentario($(this).attr("data-id_coment"));
+  $("#comentsAdm").html(data);
+  cargaAdmin();
+  });
 
 
   $(document).ready(function(){
@@ -192,17 +196,19 @@ function enviaConsulta(){
     event.preventDefault();
     var cargas=$("#llamadaInstGuitarra").attr('href');
     $.post( "index.php?action=mostrarInst",function(data) {
-   $('#llamada').html(data);
-       $(document).ready(function(){
-         var refreshId = setInterval(getComentsUser, 2000);
-         $.ajaxSetup({ cache: false });
-       });
+    $('#llamada').html(data);
+     $(document).on("submit", ".comentar", function(){
+       comentar();
+
+     });
+
+    $(document).ready(function(){
+    var refreshId = setInterval(getComentsUser, 2000);
+    $.ajaxSetup({ cache: false });
+    });
 
      event.preventDefault();
-
-
-
-  });
+   });
   render(cargas);
 
 
@@ -243,10 +249,6 @@ function createCommentUser(coments){
 
 }
 ////////////////////////////////////////////////////////////////////////
-function hola(){
-  alert('hola');
-
-}
 
 ///////////////////////mostrar comentarios admin///////////////////
 function getComentsAdm(){
@@ -280,13 +282,31 @@ function borrarComentario(id_comentario){
     method:"DELETE",
     url:"api/coment/"+id_comentario,
     success: function(data){
-      $('#comentsAdm' +id_comentario).remove();
+      $("#llamada").html(data);
+      cargaAdmin();
+    }
 
-  },
 });
 }
 
+function comentar(){
 
+      event.preventDefault();
+      formData = new FormData(this);
+      console.log(formData);
+      $.ajax({
+        method: "POST",
+        url: "api/coment/",
+        data: formData,
+        contentType: false,
+        cache: false,
+        processData: false,
+        success: function(data){
+          // $("#llamada").html(data);
+          // cargaGuitarra();
+        }
+      });
+    }
 
 function render(dir, fnsc){
   $.ajax({
