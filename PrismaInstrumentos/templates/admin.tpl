@@ -114,7 +114,7 @@
     {/if }
 
     <h1>Comentarios</h1>
-    <div class="col-md-6 col-xs-12"  id="coments">
+    <div class="col-md-6 col-xs-12"  id="comentsAdm">
 
     </div>
 

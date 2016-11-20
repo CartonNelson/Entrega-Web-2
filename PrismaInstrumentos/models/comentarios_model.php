@@ -19,7 +19,7 @@ class comentarios_model extends model
   function editarComentario($id_coment,$texto){
 
        $sentencia = $this->db->prepare("update comentario set texto=? where id_coment=?");
-       $sentencia->execute(array($texto, $id_coment));
+       $sentencia->execute(array($texto,$id_coment));
        return $sentencia->rowCount();
 
 

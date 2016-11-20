@@ -46,6 +46,7 @@ class ADM_controller
       $email=$this->login_controller->getEmail();
       $productos= $this->prodModel->getProductos();
       $categorias= $this->catModel->getCategorias();
+      print_r($tipoSesion);
       $this->vista->mostrarInst($productos,$categorias,$tipoSesion,$email);
     }
 

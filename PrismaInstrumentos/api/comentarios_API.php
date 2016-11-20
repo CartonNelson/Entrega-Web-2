@@ -36,9 +36,12 @@ class comentarios_API extends api
               $error['Error'] = "El comentario no se creo";
               $success['Success'] = "El comentario se creo";
               return($comentario==1) ? $success : $error;
-            }else{
+            }
+            else{
               if(count($argumentos)>0){
+
                 $comentario= $this->model->editarComentario($argumentos[0],$_POST['texto']);
+
                 $error['Error'] = "El comentario no se edito";
                 $success['Success'] = "El comentario se edito";
                 return($comentario==1) ? $success : $error;

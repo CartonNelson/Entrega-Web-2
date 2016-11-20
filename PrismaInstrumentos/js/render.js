@@ -5,7 +5,7 @@ $(document).ready(function(){
   $("#llamadaInstGuitarra").click(cargaGuitarra);
   $("#llamadaLocal").click(cargaUbicacion);
   $("#llamadaAdmin").click(cargaAdmin);
-
+    $(".borrar").click(hola);
 
 function cargaAdmin(){
   event.preventDefault();
@@ -22,8 +22,10 @@ function cargaAdmin(){
   $("#formNewCat").submit(agregarCategoria);
   $("#formEditarProducto").submit(editarProducto);
   $(".darPermiso").click(darPermiso);
+
+
   $(document).ready(function(){
-    var refreshId = setInterval(getComents, 2000);
+    var refreshId = setInterval(getComentsAdm, 2000);
     $.ajaxSetup({ cache: false });
   });
    event.preventDefault();
@@ -192,7 +194,7 @@ function enviaConsulta(){
     $.post( "index.php?action=mostrarInst",function(data) {
    $('#llamada').html(data);
        $(document).ready(function(){
-         var refreshId = setInterval(getComents, 2000);
+         var refreshId = setInterval(getComentsUser, 2000);
          $.ajaxSetup({ cache: false });
        });
 
@@ -217,28 +219,74 @@ function  cargaHist(){
 
 
 }
-function getComents(){
+///////////////////////mostrar comentarios general///////////////////
+function getComentsUser(){
 $.ajax({
     method:"GET",
     dataType: "JSON",
     url: "api/coment",
-    success: createComment
+    success: createCommentUser
   });
+
 }
 
-
-function createComment(coments){
-      console.log(coments);
-     var rendered = Mustache.render(template,{paquete:coments});
+var templateUser;
+$.ajax({ url: 'js/templates/comentarios.mst',
+ success: function(templateReceived) {
+   templateUser = templateReceived;
+ }
+});
+function createCommentUser(coments){
+    console.log(coments);
+     var rendered = Mustache.render(templateUser,{paquete:coments});
      $('#coments').html(rendered);
 
 }
-var template;
-$.ajax({ url: 'js/templates/comentarios.mst',
+////////////////////////////////////////////////////////////////////////
+function hola(){
+  alert('hola');
+
+}
+
+///////////////////////mostrar comentarios admin///////////////////
+function getComentsAdm(){
+$.ajax({
+    method:"GET",
+    dataType: "JSON",
+    url: "api/coment",
+    success: createCommentAdm
+  });
+
+}
+
+var templateAdm;
+$.ajax({ url: 'js/templates/comentarios_adm.mst',
  success: function(templateReceived) {
-   template = templateReceived;
+   templateAdm= templateReceived;
  }
 });
+function createCommentAdm(coments){
+    console.log(coments);
+     var rendered = Mustache.render(templateAdm,{paquete:coments});
+     $('#comentsAdm').html(rendered);
+
+}
+////////////////////////////////////////////////////////////////////////
+
+///////////////////////eliminar comentarios///////////////////
+
+function borrarComentario(id_comentario){
+  $.ajax({
+    method:"DELETE",
+    url:"api/coment/"+id_comentario,
+    success: function(data){
+      $('#comentsAdm' +id_comentario).remove();
+
+  },
+});
+}
+
+
 
 function render(dir, fnsc){
   $.ajax({
