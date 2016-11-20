@@ -56,7 +56,18 @@
       </aside>
 </article>
 </div>
+{if (isset($email))}
+<div class="row">
+
+<aside class="">
+  {include file="comentario.tpl"}
+</aside>
+</div>
+
+{/if}
 {/foreach}
+
+
 
 
 <div class="col-md-6 col-xs-12"  id="coments">

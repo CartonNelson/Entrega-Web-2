@@ -1,26 +1,27 @@
 <?php
-/* Smarty version 3.1.30, created on 2016-11-18 19:49:36
+/* Smarty version 3.1.30, created on 2016-11-20 02:17:17
   from "C:\xampp\htdocs\prisma\PrismaInstrumentos\templates\instrumentos.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_582f4d4078a375_71776696',
+  'unifunc' => 'content_5830f99d9f5685_51681448',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '332d156766e62e7782dabed0a4276786489a0561' => 
     array (
       0 => 'C:\\xampp\\htdocs\\prisma\\PrismaInstrumentos\\templates\\instrumentos.tpl',
-      1 => 1479494970,
+      1 => 1479604625,
       2 => 'file',
     ),
   ),
   'includes' => 
   array (
+    'file:comentario.tpl' => 1,
   ),
 ),false)) {
-function content_582f4d4078a375_71776696 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5830f99d9f5685_51681448 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <article>
   <section>
@@ -120,11 +121,23 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
       </aside>
 </article>
 </div>
-<?php
+<?php if ((isset($_smarty_tpl->tpl_vars['email']->value))) {?>
+<div class="row">
+
+<aside class="">
+  <?php $_smarty_tpl->_subTemplateRender("file:comentario.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, true);
+?>
+
+</aside>
+</div>
+
+<?php }
 }
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
 ?>
+
+
 
 
 

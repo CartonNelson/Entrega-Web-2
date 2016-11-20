@@ -17,7 +17,6 @@ class ADM_view{
       $this->smarty->assign('categorias',$cat);
       $this->smarty->assign('usuarios',$users);
       $this->smarty->assign('tipo',$tipoSesion);
-
       $this->smarty->display("admin.tpl");
     }
 
@@ -30,9 +29,11 @@ class ADM_view{
     //   $this->smarty->assign('productos',$productos);
     //   $this->smarty->display('lista_prod.tpl');
     // }
-    function mostrarInst($prod,$cat){
+    function mostrarInst($prod,$cat,$usuario,$email){
       $this->smarty->assign('productos',$prod);
       $this->smarty->assign('categorias',$cat);
+      $this->smarty->assign('usuario',$usuario);
+      $this->smarty->assign('email',$email);
       $this->smarty->display("instrumentos.tpl");
     }
     //

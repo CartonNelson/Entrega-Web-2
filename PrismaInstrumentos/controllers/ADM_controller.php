@@ -42,10 +42,11 @@ class ADM_controller
 
   }
     function mostrarInst(){
-
+      $tipoSesion=$this->login_controller->getTipo();
+      $email=$this->login_controller->getEmail();
       $productos= $this->prodModel->getProductos();
       $categorias= $this->catModel->getCategorias();
-      $this->vista->mostrarInst($productos,$categorias);
+      $this->vista->mostrarInst($productos,$categorias,$tipoSesion,$email);
     }
 
 

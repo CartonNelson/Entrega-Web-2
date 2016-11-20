@@ -71,9 +71,31 @@ class login_controller
       }
 
   }
-  function getTipo (){
-    return $this->model->getUser($_SESSION['USER'])["permiso_adm"];
 
+  function getTipo (){
+
+    if(isset($_SESSION['USER'])){
+    //session_start();
+    //
+    $user=$_SESSION['USER'];
+
+    return $tipoSesion= $this->model->getUser($user)["permiso_adm"];
+    //return $this->model->getUser($_SESSION['USER'])["permiso_adm"];
+      };
+
+  }
+  function getEmail (){
+    session_start();
+    $email=[];
+    if(isset($_SESSION['USER'])){
+      $user=$_SESSION['USER'];
+      //
+      $nombre=$this->model->getUser($user);
+      $email[]=$nombre["email"];
+      return $email;
+    };
+
+    //return $this->model->getUser($_SESSION['USER'])["permiso_adm"];
   }
 
 
