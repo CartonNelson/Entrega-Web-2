@@ -114,9 +114,10 @@
     {/if }
 
     <h1>Comentarios</h1>
-    <button id="refresh" type="button" class="btn btn-default btn-xs pull-right" aria-label="Refresh">
+    <!-- <button id="refresh" type="button" class="btn btn-default btn-xs pull-right" aria-label="Refresh">
               <span class="glyphicon glyphicon-refresh" aria-hidden="true"></span>
-   </button>
+   </button> -->
+
     <div class="col-md-6 col-xs-12"  id="comentsAdm">
 
     </div>
