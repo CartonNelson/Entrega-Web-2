@@ -13,6 +13,7 @@ function cargaAdmin(){
   $.get("index.php?action=iniciar_ADM",function(data) {
 
   $('#llamada').html(data);
+  getComentsAdm();
   $(".eliminarProducto").click(eliminarProducto);
   $(".eliminarCategoria").click(eliminarCategoria);
   $(".editarStock").click(editarStock);
@@ -27,11 +28,15 @@ function cargaAdmin(){
   cargaAdmin();
   });
 
-
-  $(document).ready(function(){
-    var refreshId = setInterval(getComentsAdm, 2000);
-    $.ajaxSetup({ cache: false });
-  });
+  // $(document).on("click","#refresh", function(event){
+  //   event.preventDefault();
+  //   getComentsAdm();
+  //
+  // });
+  // $(document).ready(function(){
+  //   var refreshId = setInterval(getComentsAdm, 2000);
+  //   $.ajaxSetup({ cache: false });
+  // });
    event.preventDefault();
 
   });
@@ -128,6 +133,7 @@ function editarCategoria(){
  function agregarCategoria(){
    event.preventDefault();
   formData = new FormData(this);
+  console.log(formData);
   $.ajax({
     method: "POST",
     url: "index.php?action=agregaCat",
@@ -184,26 +190,22 @@ function enviaConsulta(){
 
 
 
-  function  cargaUbicacion(){
-  event.preventDefault();
-  var cargas=$("#llamadaLocal").attr('href');
-  render(cargas);
-
-
-  }
 
   function cargaGuitarra (){
     event.preventDefault();
     var cargas=$("#llamadaInstGuitarra").attr('href');
     $.post( "index.php?action=mostrarInst",function(data) {
     $('#llamada').html(data);
-     $(document).on("submit", ".comentar", function(){
-       comentar();
-
-     });
+    $(document).on("submit", ".comentar", function(e){
+      var $this = $(this);
+      e.preventDefault();
+      var datos = {user:$this.find('#user').val(), texto:$this.find('#texto').val(), rate:$this.find('#rate').val(), producto:$this.find('#producto').val()};
+      console.log(datos);
+      comentar(datos);
+    });
 
     $(document).ready(function(){
-    var refreshId = setInterval(getComentsUser, 2000);
+    var refreshId = setInterval(getComentsUser, 4000);
     $.ajaxSetup({ cache: false });
     });
 
@@ -213,18 +215,23 @@ function enviaConsulta(){
 
 
   }
+  ///////////////////////comentar producto///////////////////
+
+  function comentar(datos){
+        $.ajax({
+          method: "POST",
+          dataType : 'JSON',
+          url: "api/coment",
+          data: datos,
+          success: function(){
+            console.log(datos);
+          }
+        });
+      }
 
 
 
 
-function  cargaHist(){
-  event.preventDefault();
-  var cargas= $("#llamadaHist").attr("href");
-
-  render(cargas);
-
-
-}
 ///////////////////////mostrar comentarios general///////////////////
 function getComentsUser(){
 $.ajax({
@@ -289,24 +296,25 @@ function borrarComentario(id_comentario){
 });
 }
 
-function comentar(){
 
+    function  cargaHist(){
       event.preventDefault();
-      formData = new FormData(this);
-      console.log(formData);
-      $.ajax({
-        method: "POST",
-        url: "api/coment/",
-        data: formData,
-        contentType: false,
-        cache: false,
-        processData: false,
-        success: function(data){
-          // $("#llamada").html(data);
-          // cargaGuitarra();
-        }
-      });
+      var cargas= $("#llamadaHist").attr("href");
+
+      render(cargas);
+
+
     }
+
+    function  cargaUbicacion(){
+    event.preventDefault();
+    var cargas=$("#llamadaLocal").attr('href');
+    render(cargas);
+
+
+    }
+
+
 
 function render(dir, fnsc){
   $.ajax({

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2016-11-20 18:35:55
+/* Smarty version 3.1.30, created on 2016-11-21 04:14:41
   from "C:\xampp\htdocs\prisma\PrismaInstrumentos\templates\admin.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5831defb616cd6_77125844',
+  'unifunc' => 'content_583266a173b5e0_31692760',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '6fb535b8a5d9f1c7af7a64902c4634db7b3dcaa8' => 
     array (
       0 => 'C:\\xampp\\htdocs\\prisma\\PrismaInstrumentos\\templates\\admin.tpl',
-      1 => 1479663226,
+      1 => 1479698069,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:usuarios.tpl' => 1,
   ),
 ),false)) {
-function content_5831defb616cd6_77125844 (Smarty_Internal_Template $_smarty_tpl) {
+function content_583266a173b5e0_31692760 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 
@@ -191,6 +191,9 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
     <?php }?>
 
     <h1>Comentarios</h1>
+    <button id="refresh" type="button" class="btn btn-default btn-xs pull-right" aria-label="Refresh">
+              <span class="glyphicon glyphicon-refresh" aria-hidden="true"></span>
+   </button>
     <div class="col-md-6 col-xs-12"  id="comentsAdm">
 
     </div>
