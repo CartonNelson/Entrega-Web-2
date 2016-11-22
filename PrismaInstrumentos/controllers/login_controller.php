@@ -53,11 +53,10 @@ class login_controller
             session_start();
 
             $_SESSION['USER'] = $user;
+            header ("Location: index.php");
             $tipoSesion= $this->model->getUser($user)["permiso_adm"];
             $verif=true;
-
             $this->vista->iniciar_user($verif,$tipoSesion);
-            //header ("Location: index.php");
             die();
 
           }else{
@@ -82,7 +81,6 @@ class login_controller
     $user=$_SESSION['USER'];
 
     return $tipoSesion= $this->model->getUser($user)["permiso_adm"];
-    //return $this->model->getUser($_SESSION['USER'])["permiso_adm"];
       };
 
   }
@@ -92,13 +90,12 @@ class login_controller
     $email=[];
     if(isset($_SESSION['USER'])){
       $user=$_SESSION['USER'];
-      //
       $nombre=$this->model->getUser($user);
       $email[]=$nombre["email"];
       return $email;
     };
 
-    //return $this->model->getUser($_SESSION['USER'])["permiso_adm"];
+
   }
 
 
@@ -114,9 +111,8 @@ class login_controller
 
 //////////CERRAR SESION///
   public function logout(){
-  session_start();
-   session_destroy();
-
+    session_start();
+    session_destroy();
     header("Location: index.php");
 
    die();

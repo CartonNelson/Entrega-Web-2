@@ -200,7 +200,7 @@ function enviaConsulta(){
       var $this = $(this);
       e.preventDefault();
       var datos = {user:$this.find('#user').val(), texto:$this.find('#texto').val(), rate:$this.find('#rate').val(), producto:$this.find('#producto').val()};
-      console.log(datos);
+      //console.log(datos);
       comentar(datos);
     });
 
