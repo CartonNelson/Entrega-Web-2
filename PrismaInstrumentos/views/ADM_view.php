@@ -20,15 +20,7 @@ class ADM_view{
       $this->smarty->display("admin.tpl");
     }
 
-    // function mostrarUsuarios($usuarios){
-    //   $this->smarty->assign('user',$usuarios);
-    //   $this->smarty->display('lista_prod.tpl');
-    // }
 
-    // function mostrarProductos($productos){
-    //   $this->smarty->assign('productos',$productos);
-    //   $this->smarty->display('lista_prod.tpl');
-    // }
     function mostrarInst($prod,$cat,$tipo,$email){
       $this->smarty->assign('productos',$prod);
       $this->smarty->assign('categorias',$cat);
@@ -36,11 +28,7 @@ class ADM_view{
       $this->smarty->assign('email',$email);
       $this->smarty->display("instrumentos.tpl");
     }
-    //
-    // function mostrarCat($categorias){
-    //   $this->smarty->assign('categorias',$categorias);
-    //   $this->smarty->display('lista_cat.tpl');
-    // }
+    
 }
 
 

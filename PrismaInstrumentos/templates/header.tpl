@@ -66,9 +66,9 @@
       </div>
       {if ($verif)}
       <div class="row">
-        <div class="">
+        <div class="col-md-1 col-md-offset-11">
           <form class="" action="index.php?action=logout" method="post">
-            <button type="submit" action="" class="alert alert-danger" name="">salir</button>
+            <button type="submit" action="" class="alert alert-danger btn-block" name="">salir</button>
           </form>
 
         </div>

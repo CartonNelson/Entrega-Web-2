@@ -25,14 +25,14 @@ class login_controller
           $pass = $_REQUEST['pass'];
           $hash =password_hash($pass, PASSWORD_BCRYPT);
           $this->model->registrar($user,$hash);
-          $this->vista_inicial->mostrarMensaje("Usted se ha registrado exitosamente, inicie sesion","success");
+          $this->vista_inicial->mostrarError("Usted se ha registrado exitosamente, inicie sesion","success");
 
 
 
 
         }else
         {
-              $this->vista_inicial->mostrarMensaje("Debe rellenar los campos","danger");
+              $this->vista_inicial->mostrarError("Debe rellenar los campos","danger");
         }
 
 
@@ -61,17 +61,18 @@ class login_controller
             die();
 
           }else{
-            $this->vista_inicial->mostrarMensaje("Usuario o contraseña incorrecto","danger");
+            $this->vista_inicial->mostrarError("Usuario o contraseña incorrecto","danger");
           }
 
     }
       else
       {
-            $this->vista_inicial->mostrarMensaje("Debe rellenar los campos","danger");
+            $this->vista_inicial->mostrarError("Debe rellenar los campos","danger");
       }
 
   }
 
+  //////////DEVUELVO TIPO DE USUARIO///
   function getTipo (){
 
     if(isset($_SESSION['USER'])){
@@ -84,6 +85,7 @@ class login_controller
       };
 
   }
+  //////////DEVUELVO NOMBRE DE USUARIO LOGEADO///
   function getEmail (){
     session_start();
     $email=[];
@@ -99,7 +101,7 @@ class login_controller
   }
 
 
-  //////////CHEKEAR EN EL CONSTRUCTOR DEL ADM_controller///
+
   public function checkLogin(){
    session_start();
    if(!isset($_SESSION['USER'])){
@@ -109,6 +111,7 @@ class login_controller
  }
 
 
+//////////CERRAR SESION///
   public function logout(){
   session_start();
    session_destroy();

@@ -4,7 +4,7 @@ require_once ("views/ADM_view.php");
 require_once ("models/instrumentos_model.php");
 require_once ("models/categoria_model.php");
 require_once ("models/contactoModel.php");
-
+require_once ("controllers/login_controller.php");
 
 
 class user_controller{
@@ -12,6 +12,7 @@ class user_controller{
   private $prodModel;
   private $contactoModel;
   private $catModel;
+  private $login_controller;
 
   function __construct()
   {
@@ -19,11 +20,18 @@ class user_controller{
     $this->prodModel= new instrumentos_model();
     $this->catModel= new categoria_model();
     $this->contactoModel= new contactoModel();
+    $this->login_controller=new login_controller();
   }
 
   function iniciar(){
-
-      $this->vista->iniciar();
+      $usuario=$this->login_controller->getEmail();
+      $tipo=$this->login_controller->getTipo();
+      if( isset($usuario)){
+        $user=true;
+      }else{
+        $user=false;
+      }
+      $this->vista->iniciar($user,$tipo);
 
   }
   function mostrarInst(){

@@ -33,13 +33,14 @@ class ADM_controller
 
   function iniciar_ADM(){
     $this->login_controller->checkLogin();
-    $productos= $this->prodModel->getProductos();
-    $categorias= $this->catModel->getCategorias();
-    $usuarios=$this->usuariosModel->getUsuarios();
-    $tipoSesion=$this->login_controller->getTipo();
+    if($this->login_controller->getTipo()>0){
+        $productos= $this->prodModel->getProductos();
+        $categorias= $this->catModel->getCategorias();
+        $usuarios=$this->usuariosModel->getUsuarios();
+        $tipoSesion=$this->login_controller->getTipo();
 
-    $this->vista->iniciar_ADM($productos,$categorias,$usuarios,$tipoSesion);
-
+        $this->vista->iniciar_ADM($productos,$categorias,$usuarios,$tipoSesion);
+    }
   }
     function mostrarInst(){
       $tipoSesion=$this->login_controller->getTipo();
@@ -54,18 +55,22 @@ class ADM_controller
 ///////////////////////////////PRODUCTOS//////////////////////////////////////
   function agregarProducto(){
     $this->login_controller->checkLogin();
-    if((isset($_POST['categoria']))&&(isset($_POST['marca']))&&(isset($_POST['modelo']))&&(isset($_POST['precio']))){
-        if ((!empty($_POST['categoria']))&&(!empty($_POST['marca']))&&(!empty($_POST['modelo']))&&(!empty($_POST['precio']))) {
-          $categoria= $_POST['categoria'];
-          $marca= $_POST['marca'];
-          $modelo= $_POST['modelo'];
-          $precio= $_POST['precio'];
-          $instrumento= array('categoria'=>$categoria,'marca'=>$marca ,'modelo'=>$modelo,'precio'=>$precio);
-          $this->prodModel->agregarProducto($instrumento);
+        if($this->login_controller->getTipo()>0){
+          if((isset($_POST['categoria']))&&(isset($_POST['marca']))&&(isset($_POST['modelo']))&&(isset($_POST['precio']))){
+              if ((!empty($_POST['categoria']))&&(!empty($_POST['marca']))&&(!empty($_POST['modelo']))&&(!empty($_POST['precio']))) {
+                $categoria= $_POST['categoria'];
+                $marca= $_POST['marca'];
+                $modelo= $_POST['modelo'];
+                $precio= $_POST['precio'];
+                $instrumento= array('categoria'=>$categoria,'marca'=>$marca ,'modelo'=>$modelo,'precio'=>$precio);
+                $this->prodModel->agregarProducto($instrumento);
+              }
+
+          }
+
+
+
         }
-
-    }
-
 
   }
 
@@ -77,37 +82,50 @@ class ADM_controller
 
     function eliminarProducto(){
       $this->login_controller->checkLogin();
-      if(isset($_REQUEST['id'])){
-        if(!empty($_REQUEST['id'])){
-          $id = array('id' => $_REQUEST['id']);
-          $this->prodModel->eliminarProducto($id);
+        if($this->login_controller->getTipo()>0){
+          if(isset($_REQUEST['id'])){
+            if(!empty($_REQUEST['id'])){
+              $id = array('id' => $_REQUEST['id']);
+              $this->prodModel->eliminarProducto($id);
+
+            }
+
+          }
 
         }
 
-      }
     }
 
     function editarStock(){
       $this->login_controller->checkLogin();
-        if (isset($_REQUEST['id'])){
-          $edit = $_REQUEST['id'];
-          $this->prodModel->editarStock($edit);
+        if($this->login_controller->getTipo()>0){
+            if (isset($_REQUEST['id'])){
+              $edit = $_REQUEST['id'];
+              $this->prodModel->editarStock($edit);
+            }
         }
 
+
     }
+
+
    function editarProducto(){
      $this->login_controller->checkLogin();
-     if ((isset($_POST['marcaEdit']))&&(isset($_POST['modeloEdit']))&&(isset($_POST['precioEdit']))&&(isset($_POST['nameCategoria']))&&(isset($_POST['id_prod']))){
-        $marca = $_POST['marcaEdit'];
-        $modelo = $_POST['modeloEdit'];
-        $precio = $_POST['precioEdit'];
-        $categoria = $_POST['nameCategoria'];
-        $id_producto= $_POST['id_prod'];
+     if($this->login_controller->getTipo()>0){
+       if ((isset($_POST['marcaEdit']))&&(isset($_POST['modeloEdit']))&&(isset($_POST['precioEdit']))&&(isset($_POST['nameCategoria']))&&(isset($_POST['id_prod']))){
+          $marca = $_POST['marcaEdit'];
+          $modelo = $_POST['modeloEdit'];
+          $precio = $_POST['precioEdit'];
+          $categoria = $_POST['nameCategoria'];
+          $id_producto= $_POST['id_prod'];
 
-        $this->prodModel->editarProducto($marca,$modelo,$precio,$categoria,$id_producto);
+          $this->prodModel->editarProducto($marca,$modelo,$precio,$categoria,$id_producto);
 
+
+       }
 
      }
+
    }
 ////////////////////////CATEGORIAS//////////////////////////////////////
       function getImagenesVerificadas($imagenes){
@@ -126,6 +144,8 @@ class ADM_controller
 
     function agregaCat(){
       $this->login_controller->checkLogin();
+       if($this->login_controller->getTipo()>0){
+
         if ((isset($_POST['categoriaNueva']))&&(isset($_FILES['img']))){
           if ((!empty($_POST['categoriaNueva']))&&(!empty($_FILES['img']))){
 
@@ -141,6 +161,7 @@ class ADM_controller
           }
 
         }
+      }
     }
     function mostrarCategorias(){
       $categorias= $this->catModel->getCategorias();
@@ -150,24 +171,28 @@ class ADM_controller
     }
 
     function eliminarCategoria(){
-      $this->login_controller->checkLogin();
-      if (isset($_REQUEST['id'])){
-        if(!empty($_REQUEST['id'])){
-          $id = array('id' => $_REQUEST['id']);
-          $this->catModel->eliminarCategoria($id);
+    $this->login_controller->checkLogin();
+      if($this->login_controller->getTipo()>0){
+        if (isset($_REQUEST['id'])){
+          if(!empty($_REQUEST['id'])){
+            $id = array('id' => $_REQUEST['id']);
+            $this->catModel->eliminarCategoria($id);
 
+          }
         }
       }
     }
 
     function editarCategoria(){
       $this->login_controller->checkLogin();
-      if ((isset($_REQUEST['categoriaEdit']))&&(isset($_REQUEST['id']))){
-        if((!empty($_REQUEST['categoriaEdit']))&&(!empty($_REQUEST['id']))){
-          $edit = array('id' => $_REQUEST['id'],'categoria' => $_REQUEST['categoriaEdit']);
-          $this->catModel->editarCategoria($edit);
+       if($this->login_controller->getTipo()>0){
+          if ((isset($_REQUEST['categoriaEdit']))&&(isset($_REQUEST['id']))){
+            if((!empty($_REQUEST['categoriaEdit']))&&(!empty($_REQUEST['id']))){
+              $edit = array('id' => $_REQUEST['id'],'categoria' => $_REQUEST['categoriaEdit']);
+              $this->catModel->editarCategoria($edit);
 
-        }
+            }
+          }
       }
     }
 

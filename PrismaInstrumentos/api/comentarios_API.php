@@ -1,7 +1,10 @@
 <?php
 require 'api.php';
+//require '../controllers/login_controller.php';
 require '../models/comentarios_model.php';
+
 include_once '../sql/config.php';
+
 
 class comentarios_API extends api
 {
@@ -39,9 +42,7 @@ class comentarios_API extends api
             }
             else{
               if(count($argumentos)>0){
-
                 $comentario= $this->model->editarComentario($argumentos[0],$_POST['texto']);
-
                 $error['Error'] = "El comentario no se edito";
                 $success['Success'] = "El comentario se edito";
                 return($comentario==1) ? $success : $error;

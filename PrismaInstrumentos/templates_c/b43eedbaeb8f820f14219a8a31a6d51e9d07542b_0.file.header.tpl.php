@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2016-11-18 20:15:59
+/* Smarty version 3.1.30, created on 2016-11-22 01:26:04
   from "C:\xampp\htdocs\prisma\PrismaInstrumentos\templates\header.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_582f536f98c011_52940267',
+  'unifunc' => 'content_5833909cc87103_53233139',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'b43eedbaeb8f820f14219a8a31a6d51e9d07542b' => 
     array (
       0 => 'C:\\xampp\\htdocs\\prisma\\PrismaInstrumentos\\templates\\header.tpl',
-      1 => 1479496553,
+      1 => 1479774361,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_582f536f98c011_52940267 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5833909cc87103_53233139 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html>
@@ -100,9 +100,9 @@ function content_582f536f98c011_52940267 (Smarty_Internal_Template $_smarty_tpl)
       </div>
       <?php if (($_smarty_tpl->tpl_vars['verif']->value)) {?>
       <div class="row">
-        <div class="">
+        <div class="col-md-1 col-md-offset-11">
           <form class="" action="index.php?action=logout" method="post">
-            <button type="submit" action="" class="alert alert-danger" name="">salir</button>
+            <button type="submit" action="" class="alert alert-danger btn-block" name="">salir</button>
           </form>
 
         </div>

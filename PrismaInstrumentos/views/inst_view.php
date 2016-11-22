@@ -12,32 +12,21 @@ class inst_view{
     }
 
 
-    function iniciar(){
-      $user=false;
+    function iniciar($user,$tipo){
+      //$user=false;
       $this->smarty->assign('verif',$user);
+      $this->smarty->assign('tipo',$tipo);
       $this->smarty->display("index.tpl");
 
     }
-    function mostrarMensaje($msj,$color){
+    function mostrarError($msj,$color){
     $this->smarty->assign('msj',$msj);
     $this->smarty->assign('color',$color);
-    $this->iniciar();
+    $user=[];
+    $tipo=-1;
+    $this->iniciar($user,$tipo);
   }
 
-
-    // function mostrarInst($prod,$cat){
-    //   $this->smarty->assign('productos',$prod);
-    //   $this->smarty->assign('categorias',$cat);
-    //   $this->smarty->display("instrumentos.tpl");
-    // }
-    // function mostrarCat($categorias){
-    //   $this->smarty->assign('categorias',$categorias);
-    //   $this->smarty->display('lista_cat.tpl');
-    // }
-    // function mostrarProductos($productos){
-    //   $this->smarty->assign('productos',$productos);
-    //   $this->smarty->display('lista_prod.tpl');
-    // }
 
 }
 
