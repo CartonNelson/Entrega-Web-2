@@ -70,6 +70,7 @@ class login_controller
             $this->vista_inicial->mostrarError("Debe rellenar los campos","danger");
       }
 
+
   }
 
   //////////DEVUELVO TIPO DE USUARIO///

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 18-11-2016 a las 17:47:54
+-- Tiempo de generación: 22-11-2016 a las 03:31:59
 -- Versión del servidor: 10.1.13-MariaDB
 -- Versión de PHP: 5.6.21
 
@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `prueba`
+-- Base de datos: `prisma`
 --
 
 -- --------------------------------------------------------
@@ -58,8 +58,8 @@ CREATE TABLE `comentario` (
 --
 
 INSERT INTO `comentario` (`id_coment`, `user`, `texto`, `rate`, `producto`) VALUES
-(1, 'nelson', 'akaknja', 3, 'gibson sg'),
-(2, 'ivan', 'holaaaa', 4, 'bateria rex');
+(47, 'nava@gmail', 'exelente producto!!', 4, 'Flying V 2016 HP'),
+(48, 'ivan@gmail', 'muy buen producto, entregado a tiempo.', 5, 'Danys 41088 (5 Cuerpos)');
 
 -- --------------------------------------------------------
 
@@ -127,11 +127,11 @@ CREATE TABLE `productos` (
 --
 
 INSERT INTO `productos` (`id_producto`, `categoria`, `marca`, `modelo`, `precio`, `stock`) VALUES
-(6, 'guitarras', 'ephipone ', 'les paul ', 21000, 0),
-(7, 'guitarras', 'ephipone', 'Flying V 2016 HP', 15000, 1),
+(6, 'guitarras', 'ephipone ', 'les paul ', 20000, 0),
+(7, 'guitarras', 'ephipone', 'Flying V 2016 HP', 15000, 0),
 (9, 'guitarras', 'fender', 'Blacktop Telecaster HH', 12000, 0),
 (10, 'percusion', 'Gretsch', 'Catalina Ash Danys 41074 (5 Cuerpos)', 23000, 0),
-(11, 'percusion', 'Resound', 'Danys 41088 (5 Cuerpos)', 16800, 1),
+(11, 'percusion', 'Resound', 'Danys 41088 (5 Cuerpos)', 16800, 0),
 (12, 'percusion', 'mapex', 'Voyager Vr5254', 14600, 0);
 
 -- --------------------------------------------------------
@@ -152,10 +152,9 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id_usuario`, `email`, `pass`, `permiso_adm`) VALUES
-(3, 'nelson', '$2y$10$hMIdjWdIe4E9rPztvUPqwuZZAK5jwH7oqMMvaJDNwboFlNhODPL8u', 5),
-(6, 'ivan', '$2y$10$iYeSqGEw/imjCn6MjMNdceG3P4u9U5zqzBct7H3iVDKY8DHjhFKG2', 1),
-(8, 'nava', '$2y$10$cq2gErPb5NYW2M1gwSp3Q.je061Ib./i.bY5ZvwvFFw9KufLPXTkC', 0),
-(9, 'silvin', '$2y$10$SRHzs4YJrsYQDimhogI0tO6gG9UQGIcfVrPM/vdubT.I31UCv8mGK', 0);
+(3, 'nelson@gmail', '$2y$10$hMIdjWdIe4E9rPztvUPqwuZZAK5jwH7oqMMvaJDNwboFlNhODPL8u', 5),
+(6, 'ivan@gmail', '$2y$10$iYeSqGEw/imjCn6MjMNdceG3P4u9U5zqzBct7H3iVDKY8DHjhFKG2', 1),
+(8, 'nava@gmail', '$2y$10$cq2gErPb5NYW2M1gwSp3Q.je061Ib./i.bY5ZvwvFFw9KufLPXTkC', 0);
 
 --
 -- Índices para tablas volcadas
@@ -215,7 +214,7 @@ ALTER TABLE `categorias`
 -- AUTO_INCREMENT de la tabla `comentario`
 --
 ALTER TABLE `comentario`
-  MODIFY `id_coment` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_coment` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
 --
 -- AUTO_INCREMENT de la tabla `contacto`
 --

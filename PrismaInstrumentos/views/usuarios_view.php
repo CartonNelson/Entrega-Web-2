@@ -15,12 +15,11 @@ class usuarios_view{
    function iniciar_user($verif,$tipo){
      $this->smarty->assign('verif',$verif);
      $this->smarty->assign('tipo',$tipo);
-
      $this->smarty->display("index.tpl");
 
 
    }
-  
+
 
 }
 

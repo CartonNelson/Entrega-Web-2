@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2016-11-22 01:26:04
+/* Smarty version 3.1.30, created on 2016-11-22 03:14:23
   from "C:\xampp\htdocs\prisma\PrismaInstrumentos\templates\header.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5833909cc87103_53233139',
+  'unifunc' => 'content_5833a9ffc51201_10192798',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'b43eedbaeb8f820f14219a8a31a6d51e9d07542b' => 
     array (
       0 => 'C:\\xampp\\htdocs\\prisma\\PrismaInstrumentos\\templates\\header.tpl',
-      1 => 1479774361,
+      1 => 1479780858,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5833909cc87103_53233139 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5833a9ffc51201_10192798 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html>
@@ -73,7 +73,7 @@ function content_5833909cc87103_53233139 (Smarty_Internal_Template $_smarty_tpl)
         <form id="login" action="index.php?action=login" class="form-inline"  method="POST">
           <div class="form-group">
             <label class="sr-only" for="exampleInputEmail3">Email address</label>
-            <input name="user"type="text" class="form-control" id="exampleInputEmail3" placeholder="Email">
+            <input name="user"type="email" class="form-control" id="exampleInputEmail3" placeholder="Email">
           </div>
           <div class="form-group">
             <label class="sr-only" for="exampleInputPassword3">Password</label>

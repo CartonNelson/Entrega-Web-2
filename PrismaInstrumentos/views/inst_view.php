@@ -13,7 +13,6 @@ class inst_view{
 
 
     function iniciar($user,$tipo){
-      //$user=false;
       $this->smarty->assign('verif',$user);
       $this->smarty->assign('tipo',$tipo);
       $this->smarty->display("index.tpl");
