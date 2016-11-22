@@ -1,12 +1,12 @@
 
 <div class="container">
-    <div class="col-md-6 col-xs-6">
+    <div class="col-md-5 col-xs-5">
         <form class="comentar" method="POST">
           <div class="form-group ">
             <label for="exampleInputEmail1"><p>{$email[0]}, dejanos tu comentario</p></label>
             <input type="hidden" class="form-control" id="user" name="user" aria-describedby="emailHelp" value="{$email[0]}">
           </div>
-          <div class="col-md-5 col-xs-5">
+          <div class="col-md-8 col-xs-8">
             <div class="form-group">
               <label for="exampleSelect1"><p>Instrumento</p></label>
               <select class="form-control" id="producto" name="producto">
@@ -21,7 +21,7 @@
               </select>
             </div>
           </div>
-          <div class="col-md-5 col-xs-5">
+          <div class="col-md-3 col-xs-3">
             <div class="form-group">
               <label for="exampleSelect1"><p>Calificacion</p></label>
               <select class="form-control" id="rate" name="rate">

@@ -38,7 +38,21 @@
                  {/foreach}
              </tbody>
          </table>
+
        </section>
+       <br><br><br>
+       <section>
+         {if (isset($email))}
+
+         <div class="row">
+
+
+           {include file="comentario.tpl"}
+
+         </div>
+         {/if}
+       </section>
+
    </div>
    <aside class="publi">
       <div class="col-md-6" class="col-xs-4" >
@@ -54,20 +68,13 @@
 
         </div>
       </aside>
+
 </article>
 </div>
-{if (isset($email))}
-<div class="row">
-
-<aside class="">
-  {include file="comentario.tpl"}
-</aside>
-</div>
-
-{/if}
+<br><br>
 {/foreach}
 
-
+ <br><br><br>
 
 
 <div class="col-md-6 col-xs-12"  id="coments">

@@ -47,7 +47,6 @@ class ADM_controller
       $email=$this->login_controller->getEmail();
       $productos= $this->prodModel->getProductos();
       $categorias= $this->catModel->getCategorias();
-      print_r($tipoSesion);
       $this->vista->mostrarInst($productos,$categorias,$tipoSesion,$email);
     }
 
@@ -210,11 +209,13 @@ class ADM_controller
 
 
       function darPermiso(){
+        $this->login_controller->checkLogin();
+        if(($this->login_controller->getTipo())==5){
           if (isset($_REQUEST['id'])){
             $id = $_REQUEST['id'];
             $this->usuariosModel->editarPermiso($id);
           }
-
+        }
       }
 
 }
