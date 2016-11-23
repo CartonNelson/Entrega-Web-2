@@ -42,11 +42,12 @@ class ADM_controller
         $this->vista->iniciar_ADM($productos,$categorias,$usuarios,$tipoSesion);
     }
   }
-    function mostrarInst(){
+  function mostrarInst(){
       $tipoSesion=$this->login_controller->getTipo();
       $email=$this->login_controller->getEmail();
       $productos= $this->prodModel->getProductos();
       $categorias= $this->catModel->getCategorias();
+
       $this->vista->mostrarInst($productos,$categorias,$tipoSesion,$email);
     }
 
@@ -62,21 +63,17 @@ class ADM_controller
                 $modelo= $_POST['modelo'];
                 $precio= $_POST['precio'];
                 $instrumento= array('categoria'=>$categoria,'marca'=>$marca ,'modelo'=>$modelo,'precio'=>$precio);
+
                 $this->prodModel->agregarProducto($instrumento);
               }
-
           }
-
-
-
         }
-
   }
 
     function mostrarProductos(){
       $productos= $this->prodModel->getProductos();
-      $this->vista->mostrarProductos($productos);
 
+      $this->vista->mostrarProductos($productos);
     }
 
     function eliminarProducto(){
@@ -85,14 +82,11 @@ class ADM_controller
           if(isset($_REQUEST['id'])){
             if(!empty($_REQUEST['id'])){
               $id = array('id' => $_REQUEST['id']);
+
               $this->prodModel->eliminarProducto($id);
-
             }
-
           }
-
         }
-
     }
 
     function editarStock(){
@@ -100,11 +94,10 @@ class ADM_controller
         if($this->login_controller->getTipo()>0){
             if (isset($_REQUEST['id'])){
               $edit = $_REQUEST['id'];
+
               $this->prodModel->editarStock($edit);
             }
         }
-
-
     }
 
 
@@ -119,8 +112,6 @@ class ADM_controller
           $id_producto= $_POST['id_prod'];
 
           $this->prodModel->editarProducto($marca,$modelo,$precio,$categoria,$id_producto);
-
-
        }
 
      }
@@ -144,17 +135,16 @@ class ADM_controller
     function agregaCat(){
       $this->login_controller->checkLogin();
        if($this->login_controller->getTipo()>0){
-
         if ((isset($_POST['categoriaNueva']))&&(isset($_FILES['img']))){
           if ((!empty($_POST['categoriaNueva']))&&(!empty($_FILES['img']))){
-
             $categoria= $_POST['categoriaNueva'];
             $imagenesVerificadas = $this->getImagenesVerificadas($_FILES['img']);
 
-                if(count($imagenesVerificadas)>0){
-                  $cat= array('categoria'=>$categoria);
-                  $this->catModel->agregaCat($cat,$imagenesVerificadas);
-                  }
+            if(count($imagenesVerificadas)>0){
+              $cat= array('categoria'=>$categoria);
+
+              $this->catModel->agregaCat($cat,$imagenesVerificadas);
+            }
 
 
           }
@@ -162,39 +152,34 @@ class ADM_controller
         }
       }
     }
-    function agregarImagenes(){
 
+    function agregarImagenes(){
         $this->login_controller->checkLogin();
         if($this->login_controller->getTipo()>0){
           if ((isset($_POST['categ']))&&(isset($_FILES['imagenes']))){
             if ((!empty($_POST['categ']))&&(!empty($_FILES['imagenes']))){
                 $categoria= $_POST['categ'];
-                
                 $imagenesVerificadas = $this->getImagenesVerificadas($_FILES['imagenes']);
-                if(count($imagenesVerificadas)>0){
-                  $this->catModel->agregarImagenes($categoria,$imagenesVerificadas);
+                  if(count($imagenesVerificadas)>0){
+                    $this->catModel->agregarImagenes($categoria,$imagenesVerificadas);
                   }
               }
           }
         }
-
     }
 
     function mostrarCategorias(){
       $categorias= $this->catModel->getCategorias();
       $this->vista-> mostrarCat($categorias);
-
-
     }
 
     function eliminarCategoria(){
-    $this->login_controller->checkLogin();
+      $this->login_controller->checkLogin();
       if($this->login_controller->getTipo()>0){
         if (isset($_REQUEST['id'])){
           if(!empty($_REQUEST['id'])){
             $id = array('id' => $_REQUEST['id']);
             $this->catModel->eliminarCategoria($id);
-
           }
         }
       }
@@ -202,12 +187,11 @@ class ADM_controller
 
     function editarCategoria(){
       $this->login_controller->checkLogin();
-       if($this->login_controller->getTipo()>0){
-          if ((isset($_REQUEST['categoriaEdit']))&&(isset($_REQUEST['id']))){
-            if((!empty($_REQUEST['categoriaEdit']))&&(!empty($_REQUEST['id']))){
-              $edit = array('id' => $_REQUEST['id'],'categoria' => $_REQUEST['categoriaEdit']);
-              $this->catModel->editarCategoria($edit);
-
+      if($this->login_controller->getTipo()>0){
+        if ((isset($_REQUEST['categoriaEdit']))&&(isset($_REQUEST['id']))){
+          if((!empty($_REQUEST['categoriaEdit']))&&(!empty($_REQUEST['id']))){
+            $edit = array('id' => $_REQUEST['id'],'categoria' => $_REQUEST['categoriaEdit']);
+            $this->catModel->editarCategoria($edit);
             }
           }
       }
@@ -219,12 +203,9 @@ class ADM_controller
           if((!empty($_POST['nombre']))&&(!empty($_POST['email']))&&(!empty($_POST['mensaje']))){
             $consulta = array('nombre' =>$_POST['nombre'] ,'email' =>$_POST['email'],'mensaje' =>$_POST['mensaje']);
             $this->contactoModel->enviarContacto($consulta);
-
             }
         }
       }
-
-
 
       function darPermiso(){
         $this->login_controller->checkLogin();
@@ -237,12 +218,4 @@ class ADM_controller
       }
 
 }
-
-
-
-
-
-
-
-
- ?>
+?>

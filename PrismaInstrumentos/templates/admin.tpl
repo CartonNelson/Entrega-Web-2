@@ -59,7 +59,7 @@
                 {/foreach}
             </select>
             <input type="file" class="form-control" name="imagenes[]" value="" multiple>
-            <input type="submit" class=" btn btn-success" name="agregaImagen" value="agregarImagen">
+            <input type="submit" class=" btn btn-success" name="agregaImagen" value="Agregar Imagenes">
           </form>
         </container>
       </div>

@@ -2,8 +2,6 @@
 include_once ("models/model.php");
 class categoria_model extends model{
 
-
-
   function agregaCat($categoria,$imagenes){
     $sentencia = $this->db->prepare("INSERT INTO categorias(categoria)"."VALUES(:categoria)");
     $sentencia->execute( array(":categoria"=>$categoria['categoria']));
@@ -23,8 +21,8 @@ class categoria_model extends model{
     $sentencia->execute(array($id_cat));
     return $sentencia->fetchAll(PDO::FETCH_ASSOC);
   }
-  function getCategorias(){
 
+  function getCategorias(){
       $sentencia= $this->db->prepare( "select * from  categorias");
       $sentencia->execute();
       $categorias=$sentencia->fetchAll(PDO::FETCH_ASSOC);
@@ -34,17 +32,14 @@ class categoria_model extends model{
       return $categorias;
   }
 
-
-
   function eliminarcategoria($id){
     $sentencia = $this->db->prepare("delete from categorias where id_categoria=?");
-
     $sentencia->execute((array($id['id'])));
-
   }
+
   function editarCategoria($info){
-        $sentencia = $this->db->prepare("update categorias set categoria=? where id_categoria=?");
-        $sentencia->execute((array($info['categoria'],$info['id'])));
+    $sentencia = $this->db->prepare("update categorias set categoria=? where id_categoria=?");
+    $sentencia->execute((array($info['categoria'],$info['id'])));
   }
 
   function agregarImagenes($id_cat,$imagenes){
@@ -54,15 +49,7 @@ class categoria_model extends model{
       $insertImagen = $this->db->prepare("INSERT INTO imagen(path,fk_id_cat) VALUES(?,?)");
       $insertImagen->execute(array($path,$id_cat));
     }
-
-      return $id_cat;
+    return $id_cat;
   }
-
-
-
-
 }
-
-
-
- ?>
+?>

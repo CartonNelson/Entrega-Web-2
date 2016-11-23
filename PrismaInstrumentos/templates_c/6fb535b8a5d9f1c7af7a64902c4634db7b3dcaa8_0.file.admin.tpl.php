@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2016-11-23 00:52:46
+/* Smarty version 3.1.30, created on 2016-11-23 06:16:12
   from "C:\xampp\htdocs\prisma\PrismaInstrumentos\templates\admin.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5834da4e2ec470_75241510',
+  'unifunc' => 'content_5835261c65eaa3_02736386',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '6fb535b8a5d9f1c7af7a64902c4634db7b3dcaa8' => 
     array (
       0 => 'C:\\xampp\\htdocs\\prisma\\PrismaInstrumentos\\templates\\admin.tpl',
-      1 => 1479858758,
+      1 => 1479877804,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:usuarios.tpl' => 1,
   ),
 ),false)) {
-function content_5834da4e2ec470_75241510 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5835261c65eaa3_02736386 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 
@@ -108,7 +108,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
 
             </select>
             <input type="file" class="form-control" name="imagenes[]" value="" multiple>
-            <input type="submit" class=" btn btn-success" name="agregaImagen" value="agregarImagen">
+            <input type="submit" class=" btn btn-success" name="agregaImagen" value="Agregar Imagenes">
           </form>
         </container>
       </div>

@@ -26,25 +26,26 @@ class user_controller{
   function iniciar(){
       $usuario=$this->login_controller->getEmail();
       $tipo=$this->login_controller->getTipo();
-      if( isset($usuario)){
+      if(isset($usuario)){
         $user=true;
-      }else{
+      }else
+      {
         $user=false;
       }
       $this->vista->iniciar($user,$tipo);
-
   }
+
   function mostrarInst(){
     $productos= $this->prodModel->getProductos();
     $categorias= $this->catModel->getCategorias();
     $this->vista->mostrarInst($productos,$categorias);
   }
+
   function mostrarProductos(){
     $productos= $this->prodModel->getProductos();
-
     $this->vista->mostrarProductos($productos);
-
   }
+
   function mostrarCategorias(){
     $categorias= $this->catModel->getCategorias();
     $this->vista-> mostrarCat($categorias);
@@ -56,11 +57,8 @@ class user_controller{
       if((!empty($_POST['nombre']))&&(!empty($_POST['email']))&&(!empty($_POST['mensaje']))){
         $consulta = array('nombre' =>$_POST['nombre'] ,'email' =>$_POST['email'],'mensaje' =>$_POST['mensaje']);
         $this->contactoModel->enviarContacto($consulta);
-
         }
     }
   }
-
 }
-
- ?>
+?>

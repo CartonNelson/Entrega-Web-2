@@ -1,28 +1,19 @@
 <?php
-require_once ("libs/Smarty.class.php");
+require_once (dirname(__DIR__)."/libs/Smarty.class.php");
 
 class usuarios_view{
 
-
-
  private $smarty;
-   function __construct()
-   {
+
+  function __construct(){
+
    $this->smarty= new Smarty();
-   }
+  }
 
-
-   function iniciar_user($verif,$tipo){
+  function iniciar_user($verif,$tipo){
      $this->smarty->assign('verif',$verif);
      $this->smarty->assign('tipo',$tipo);
      $this->smarty->display("index.tpl");
-
-
-   }
-
-
+  }
 }
-
-
-
 ?>

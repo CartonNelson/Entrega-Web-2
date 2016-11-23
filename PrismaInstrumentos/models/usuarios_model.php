@@ -1,25 +1,20 @@
 <?php
 
-include_once ("models/model.php") ;
+include_once (dirname(__DIR__)."/models/model.php") ;
 class usuarios_model extends model
 {
-
-
 
   function getUser($user){
      $sentencia = $this->db->prepare( "select * from user where email = ?");
      $sentencia->execute(array($user));
-
      return $sentencia->fetch(PDO::FETCH_ASSOC);
+  }
 
-   }
-
-
-   function registrar($user,$hash){
+  function registrar($user,$hash){
         $sentencia = $this->db->prepare("INSERT INTO user(email,pass) VALUES(?,?)");
         $sentencia->execute( array($user,$hash));
+  }
 
-      }
   function getUsuarios(){
       $sentencia = $this->db->prepare( "select * from user where permiso_adm != 5");
       $sentencia->execute();
@@ -32,7 +27,7 @@ class usuarios_model extends model
 
      return $sentencia->fetch(PDO::FETCH_ASSOC);
 
-   }
+  }
 
   function editarPermiso($id){
 
@@ -42,13 +37,5 @@ class usuarios_model extends model
 
 
   }
-
-
 }
-
-
-
-
-
-
- ?>
+?>
