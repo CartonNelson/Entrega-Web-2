@@ -162,6 +162,24 @@ class ADM_controller
         }
       }
     }
+    function agregarImagenes(){
+
+        $this->login_controller->checkLogin();
+        if($this->login_controller->getTipo()>0){
+          if ((isset($_POST['categ']))&&(isset($_FILES['imagenes']))){
+            if ((!empty($_POST['categ']))&&(!empty($_FILES['imagenes']))){
+                $categoria= $_POST['categ'];
+                
+                $imagenesVerificadas = $this->getImagenesVerificadas($_FILES['imagenes']);
+                if(count($imagenesVerificadas)>0){
+                  $this->catModel->agregarImagenes($categoria,$imagenesVerificadas);
+                  }
+              }
+          }
+        }
+
+    }
+
     function mostrarCategorias(){
       $categorias= $this->catModel->getCategorias();
       $this->vista-> mostrarCat($categorias);

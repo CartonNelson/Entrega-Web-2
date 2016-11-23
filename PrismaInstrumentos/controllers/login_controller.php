@@ -57,6 +57,7 @@ class login_controller
             $tipoSesion= $this->model->getUser($user)["permiso_adm"];
             $verif=true;
             $this->vista->iniciar_user($verif,$tipoSesion);
+            
             die();
 
           }else{

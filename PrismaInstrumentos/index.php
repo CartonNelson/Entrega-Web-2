@@ -76,6 +76,9 @@ switch ($_REQUEST[ConfigApp::$ACTION]) {
                                                     case ConfigApp::$ACTION_DAR_PERMISO:
                                                       $ADM_controller->darPermiso();
                                                         break;
+                                                        case ConfigApp::$ACTION_AGREGAR_IMAGENES:
+                                                          $ADM_controller->agregarImagenes();
+                                                            break;
 
 }
  ?>

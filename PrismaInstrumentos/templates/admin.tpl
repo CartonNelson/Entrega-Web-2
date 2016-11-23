@@ -44,8 +44,24 @@
 
         <input type="submit" class="btn btn-success" name="Agregar" value="Agregar">
       </form>
+
+
     </container>
 
+      </div>
+      <div class="row">
+          <container>
+        <h3>Agregar imagenes</h3>
+          <form class="form-inline" id="AgregarImagenes"  method="POST" enctype="multipart/form-data">
+            <select class="form-control" name="categ" >
+                {foreach $categorias item=$cat}
+                <option value="{$cat.id_categoria}">{$cat.categoria}</option>
+                {/foreach}
+            </select>
+            <input type="file" class="form-control" name="imagenes[]" value="" multiple>
+            <input type="submit" class=" btn btn-success" name="agregaImagen" value="agregarImagen">
+          </form>
+        </container>
       </div>
   <div class="row">
     <container>
@@ -62,6 +78,8 @@
             <input type="text" class="form-control" name="categoriaEdit" value="" placeholder="Nuevo nombre">
             <input type="submit" class=" btn btn-success" name="Editar" value="Editar">
         </form>
+
+
 
 
 

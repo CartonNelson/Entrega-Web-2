@@ -21,12 +21,14 @@ function cargaAdmin(){
   $("#formEditarCategoria").submit(editarCategoria);
   $("#formNewCat").submit(agregarCategoria);
   $("#formEditarProducto").submit(editarProducto);
+  $("#AgregarImagenes").submit(agregarImagenes);
   $(".darPermiso").click(darPermiso);
   $(document).on("click", ".borrar", function(){
   borrarComentario($(this).attr("data-id_coment"));
   $("#comentsAdm").html(data);
   cargaAdmin();
   });
+
 
   // $(document).on("click","#refresh", function(event){
   //   event.preventDefault();
@@ -43,6 +45,23 @@ function cargaAdmin(){
   render(cargas);
 }
 
+function agregarImagenes(){
+  event.preventDefault();
+ formData = new FormData(this);
+ console.log(formData);
+ $.ajax({
+   method: "POST",
+   url: "index.php?action=agregarImagenes",
+   data: formData,
+   contentType: false,
+   cache: false,
+   processData: false,
+   success: function(data){
+   $("#llamada").html(data);
+   cargaAdmin();
+   }
+   });
+ }
 function eliminarProducto(){
   event.preventDefault();
 
